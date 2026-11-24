@@ -1,0 +1,33 @@
++ Regression suite - defects D1..D8 from v1.0.0
+  [FAIL] REG-D4 billable weight 2.1 kg is rounded UP to 2.5 kg (was rounded to 2.0 kg)
+       => AssertionFailedError: expected: <2.5> but was: <2.0>
+  [FAIL] REG-D2 minimum weight 0.1 kg is accepted (was rejected)
+       => AssertionFailedError: Unexpected exception thrown: com.svv.shipping.validation.InvalidShipmentException: Weight must be between 0.1 and 30.0 kg: 0.1
+  [FAIL] REG-D5 SAME_DAY uses billable weight: 2 kg box of 60x40x30 cm (24 kg) is rejected
+       => AssertionFailedError: Expected com.svv.shipping.service.UnsupportedServiceException to be thrown, but nothing was thrown.
+  [FAIL] REG-D8 insured parcel with declared value 0 is rejected (was accepted)
+       => AssertionFailedError: Expected com.svv.shipping.validation.InvalidShipmentException to be thrown, but nothing was thrown.
+  [FAIL] REG-D7 discount is not applied to the insurance fee (total 543.93 TL, was 531.93 TL)
+       => AssertionFailedError: expected: <81.87> but was: <93.87>
+  [FAIL] REG-D1 50 km belongs to the LOCAL zone (was REGIONAL)
+       => AssertionFailedError: expected: <LOCAL> but was: <REGIONAL>
+  [FAIL] REG-D6 subtotal of exactly 500.00 TL gets the high-volume rate (GOLD 15%, was 10%)
+       => AssertionFailedError: expected: <0.15> but was: <0.10>
+  [FAIL] REG-D3 NaN weight is rejected by the validator (was accepted)
+       => AssertionFailedError: Expected com.svv.shipping.validation.InvalidShipmentException to be thrown, but nothing was thrown.
+
+
+Test run finished after 225 ms
+[         2 containers found      ]
+[         0 containers skipped    ]
+[         2 containers started    ]
+[         0 containers aborted    ]
+[         2 containers successful ]
+[         0 containers failed     ]
+[         8 tests found           ]
+[         0 tests skipped         ]
+[         8 tests started         ]
+[         0 tests aborted         ]
+[         0 tests successful      ]
+[         8 tests failed          ]
+

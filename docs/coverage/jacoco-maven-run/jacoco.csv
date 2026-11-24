@@ -1,0 +1,11 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+Shipping Cost Calculator,com.svv.shipping.service,ShippingCostCalculator,0,324,0,22,0,56,0,21,0,10
+Shipping Cost Calculator,com.svv.shipping.service,UnsupportedServiceException,0,4,0,0,0,2,0,1,0,1
+Shipping Cost Calculator,com.svv.shipping.model,PriceBreakdown,0,89,0,0,0,3,0,2,0,2
+Shipping Cost Calculator,com.svv.shipping.model,Shipment,0,37,0,0,0,2,0,2,0,2
+Shipping Cost Calculator,com.svv.shipping.model,ServiceType,0,44,0,0,0,8,0,3,0,3
+Shipping Cost Calculator,com.svv.shipping.model,Zone,0,113,0,9,0,20,0,10,0,5
+Shipping Cost Calculator,com.svv.shipping.model,Shipment.Builder,0,110,0,2,0,20,0,11,0,10
+Shipping Cost Calculator,com.svv.shipping.model,CustomerType,0,62,0,0,0,10,0,4,0,4
+Shipping Cost Calculator,com.svv.shipping.validation,InvalidShipmentException,0,4,0,0,0,2,0,1,0,1
+Shipping Cost Calculator,com.svv.shipping.validation,ShipmentValidator,0,166,0,30,0,38,0,23,0,8

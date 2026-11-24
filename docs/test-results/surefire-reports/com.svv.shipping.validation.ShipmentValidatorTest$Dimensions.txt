@@ -1,0 +1,18 @@
+-------------------------------------------------------------------------------
+Test set: com.svv.shipping.validation.ShipmentValidatorTest$Dimensions
+-------------------------------------------------------------------------------
+Tests run: 14, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.038 s -- in com.svv.shipping.validation.ShipmentValidatorTest$Dimensions
+com.svv.shipping.validation.ShipmentValidatorTest$Dimensions.invalidDimensionsAreRejected(String, String, int, int, int, String)[1] -- Time elapsed: 0.006 s
+com.svv.shipping.validation.ShipmentValidatorTest$Dimensions.invalidDimensionsAreRejected(String, String, int, int, int, String)[2] -- Time elapsed: 0.002 s
+com.svv.shipping.validation.ShipmentValidatorTest$Dimensions.invalidDimensionsAreRejected(String, String, int, int, int, String)[3] -- Time elapsed: 0.002 s
+com.svv.shipping.validation.ShipmentValidatorTest$Dimensions.invalidDimensionsAreRejected(String, String, int, int, int, String)[4] -- Time elapsed: 0.002 s
+com.svv.shipping.validation.ShipmentValidatorTest$Dimensions.invalidDimensionsAreRejected(String, String, int, int, int, String)[5] -- Time elapsed: 0.001 s
+com.svv.shipping.validation.ShipmentValidatorTest$Dimensions.invalidDimensionsAreRejected(String, String, int, int, int, String)[6] -- Time elapsed: 0.001 s
+com.svv.shipping.validation.ShipmentValidatorTest$Dimensions.invalidDimensionsAreRejected(String, String, int, int, int, String)[7] -- Time elapsed: 0.001 s
+com.svv.shipping.validation.ShipmentValidatorTest$Dimensions.invalidDimensionsAreRejected(String, String, int, int, int, String)[8] -- Time elapsed: 0.002 s
+com.svv.shipping.validation.ShipmentValidatorTest$Dimensions.validDimensionsAreAccepted(String, String, int, int, int)[1] -- Time elapsed: 0.005 s
+com.svv.shipping.validation.ShipmentValidatorTest$Dimensions.validDimensionsAreAccepted(String, String, int, int, int)[2] -- Time elapsed: 0.001 s
+com.svv.shipping.validation.ShipmentValidatorTest$Dimensions.validDimensionsAreAccepted(String, String, int, int, int)[3] -- Time elapsed: 0 s
+com.svv.shipping.validation.ShipmentValidatorTest$Dimensions.validDimensionsAreAccepted(String, String, int, int, int)[4] -- Time elapsed: 0 s
+com.svv.shipping.validation.ShipmentValidatorTest$Dimensions.validDimensionsAreAccepted(String, String, int, int, int)[5] -- Time elapsed: 0 s
+com.svv.shipping.validation.ShipmentValidatorTest$Dimensions.validDimensionsAreAccepted(String, String, int, int, int)[6] -- Time elapsed: 0.001 s

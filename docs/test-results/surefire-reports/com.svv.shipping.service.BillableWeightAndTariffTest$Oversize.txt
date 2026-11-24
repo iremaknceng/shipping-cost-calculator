@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: com.svv.shipping.service.BillableWeightAndTariffTest$Oversize
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.048 s -- in com.svv.shipping.service.BillableWeightAndTariffTest$Oversize
+com.svv.shipping.service.BillableWeightAndTariffTest$Oversize.aboveLimitIsRejected(String, int, int, int, String)[1] -- Time elapsed: 0.024 s
+com.svv.shipping.service.BillableWeightAndTariffTest$Oversize.aboveLimitIsRejected(String, int, int, int, String)[2] -- Time elapsed: 0.002 s
+com.svv.shipping.service.BillableWeightAndTariffTest$Oversize.atOrBelowLimitIsAccepted(String, int, int, int, String)[1] -- Time elapsed: 0.006 s
+com.svv.shipping.service.BillableWeightAndTariffTest$Oversize.atOrBelowLimitIsAccepted(String, int, int, int, String)[2] -- Time elapsed: 0.001 s

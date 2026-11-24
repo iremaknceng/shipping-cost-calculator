@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: com.svv.shipping.service.ShippingCostCalculatorTest$InvariantsAndNegative
+-------------------------------------------------------------------------------
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.024 s -- in com.svv.shipping.service.ShippingCostCalculatorTest$InvariantsAndNegative
+com.svv.shipping.service.ShippingCostCalculatorTest$InvariantsAndNegative.totalIsConsistent(ServiceType, CustomerType, int, boolean)[1] -- Time elapsed: 0.003 s
+com.svv.shipping.service.ShippingCostCalculatorTest$InvariantsAndNegative.totalIsConsistent(ServiceType, CustomerType, int, boolean)[2] -- Time elapsed: 0.001 s
+com.svv.shipping.service.ShippingCostCalculatorTest$InvariantsAndNegative.totalIsConsistent(ServiceType, CustomerType, int, boolean)[3] -- Time elapsed: 0 s
+com.svv.shipping.service.ShippingCostCalculatorTest$InvariantsAndNegative.totalIsConsistent(ServiceType, CustomerType, int, boolean)[4] -- Time elapsed: 0.001 s
+com.svv.shipping.service.ShippingCostCalculatorTest$InvariantsAndNegative.customValidatorIsUsed -- Time elapsed: 0.002 s
+com.svv.shipping.service.ShippingCostCalculatorTest$InvariantsAndNegative.nullShipment -- Time elapsed: 0.002 s
+com.svv.shipping.service.ShippingCostCalculatorTest$InvariantsAndNegative.invalidInputNeverPriced -- Time elapsed: 0.002 s
+com.svv.shipping.service.ShippingCostCalculatorTest$InvariantsAndNegative.breakdownToString -- Time elapsed: 0.001 s

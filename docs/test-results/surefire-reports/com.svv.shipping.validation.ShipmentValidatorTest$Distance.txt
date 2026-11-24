@@ -1,0 +1,13 @@
+-------------------------------------------------------------------------------
+Test set: com.svv.shipping.validation.ShipmentValidatorTest$Distance
+-------------------------------------------------------------------------------
+Tests run: 9, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.024 s -- in com.svv.shipping.validation.ShipmentValidatorTest$Distance
+com.svv.shipping.validation.ShipmentValidatorTest$Distance.invalidDistancesAreRejected(String, String, int)[1] -- Time elapsed: 0.001 s
+com.svv.shipping.validation.ShipmentValidatorTest$Distance.invalidDistancesAreRejected(String, String, int)[2] -- Time elapsed: 0.002 s
+com.svv.shipping.validation.ShipmentValidatorTest$Distance.invalidDistancesAreRejected(String, String, int)[3] -- Time elapsed: 0.001 s
+com.svv.shipping.validation.ShipmentValidatorTest$Distance.invalidDistancesAreRejected(String, String, int)[4] -- Time elapsed: 0.001 s
+com.svv.shipping.validation.ShipmentValidatorTest$Distance.validDistancesAreAccepted(String, String, int)[1] -- Time elapsed: 0.003 s
+com.svv.shipping.validation.ShipmentValidatorTest$Distance.validDistancesAreAccepted(String, String, int)[2] -- Time elapsed: 0.001 s
+com.svv.shipping.validation.ShipmentValidatorTest$Distance.validDistancesAreAccepted(String, String, int)[3] -- Time elapsed: 0.001 s
+com.svv.shipping.validation.ShipmentValidatorTest$Distance.validDistancesAreAccepted(String, String, int)[4] -- Time elapsed: 0.001 s
+com.svv.shipping.validation.ShipmentValidatorTest$Distance.validDistancesAreAccepted(String, String, int)[5] -- Time elapsed: 0.001 s

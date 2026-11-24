@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>CustomerType.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Shipping Cost Calculator v1.1.0</a> &gt; <a href="index.source.html" class="el_package">com.svv.shipping.model</a> &gt; <span class="el_source">CustomerType.java</span></div><h1>CustomerType.java</h1><pre class="source lang-java linenums">package com.svv.shipping.model;
+
+import java.math.BigDecimal;
+
+/**
+ * Loyalty level of the sender (FR-12).
+ * Each level has a normal discount rate and a higher rate that applies when the
+ * transport subtotal reaches the high-volume threshold.
+ */
+<span class="fc" id="L10">public enum CustomerType {</span>
+<span class="fc" id="L11">    REGULAR(new BigDecimal(&quot;0.00&quot;), new BigDecimal(&quot;0.00&quot;)),</span>
+<span class="fc" id="L12">    SILVER(new BigDecimal(&quot;0.05&quot;), new BigDecimal(&quot;0.08&quot;)),</span>
+<span class="fc" id="L13">    GOLD(new BigDecimal(&quot;0.10&quot;), new BigDecimal(&quot;0.15&quot;));</span>
+
+    private final BigDecimal normalRate;
+    private final BigDecimal highVolumeRate;
+
+<span class="fc" id="L18">    CustomerType(BigDecimal normalRate, BigDecimal highVolumeRate) {</span>
+<span class="fc" id="L19">        this.normalRate = normalRate;</span>
+<span class="fc" id="L20">        this.highVolumeRate = highVolumeRate;</span>
+<span class="fc" id="L21">    }</span>
+
+    public BigDecimal normalRate() {
+<span class="fc" id="L24">        return normalRate;</span>
+    }
+
+    public BigDecimal highVolumeRate() {
+<span class="fc" id="L28">        return highVolumeRate;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>

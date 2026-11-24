@@ -1,0 +1,8 @@
+Shipment[weightKg=2.0, lengthCm=30, widthCm=20, heightCm=10, distanceKm=30, service=STANDARD, customer=REGULAR, fragile=false, insured=false, declaredValue=0]
+  -> billable=2.0 kg, zone=LOCAL, base=48.00, transport=48.00, fragile=0.00, subtotal=48.00, discount=-0.00, insurance=0.00, TOTAL=48.00 TL, delivery=1 day(s)
+Shipment[weightKg=12.0, lengthCm=60, widthCm=40, heightCm=40, distanceKm=450, service=EXPRESS, customer=GOLD, fragile=true, insured=true, declaredValue=8000]
+  -> billable=32.0 kg, zone=NATIONAL, base=217.00, transport=520.80, fragile=25.00, subtotal=545.80, discount=-81.87, insurance=80.00, TOTAL=543.93 TL, delivery=2 day(s)
+Shipment[weightKg=2.0, lengthCm=60, widthCm=40, heightCm=30, distanceKm=20, service=SAME_DAY, customer=REGULAR, fragile=false, insured=false, declaredValue=0]
+  -> REJECTED: SAME_DAY is limited to a billable weight of 10 kg: 24.0
+Shipment[weightKg=0.0, lengthCm=30, widthCm=20, heightCm=10, distanceKm=30, service=STANDARD, customer=REGULAR, fragile=false, insured=false, declaredValue=0]
+  -> REJECTED: Weight must be between 0.1 and 30.0 kg: 0.0

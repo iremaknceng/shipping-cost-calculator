@@ -1,0 +1,24 @@
+-------------------------------------------------------------------------------
+Test set: com.svv.shipping.model.ZoneTest
+-------------------------------------------------------------------------------
+Tests run: 20, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.398 s -- in com.svv.shipping.model.ZoneTest
+com.svv.shipping.model.ZoneTest.deliveryDaysFollowTable(String, Zone, ServiceType, int)[1] -- Time elapsed: 0.118 s
+com.svv.shipping.model.ZoneTest.deliveryDaysFollowTable(String, Zone, ServiceType, int)[2] -- Time elapsed: 0.002 s
+com.svv.shipping.model.ZoneTest.deliveryDaysFollowTable(String, Zone, ServiceType, int)[3] -- Time elapsed: 0.002 s
+com.svv.shipping.model.ZoneTest.deliveryDaysFollowTable(String, Zone, ServiceType, int)[4] -- Time elapsed: 0.001 s
+com.svv.shipping.model.ZoneTest.deliveryDaysFollowTable(String, Zone, ServiceType, int)[5] -- Time elapsed: 0.001 s
+com.svv.shipping.model.ZoneTest.deliveryDaysFollowTable(String, Zone, ServiceType, int)[6] -- Time elapsed: 0.001 s
+com.svv.shipping.model.ZoneTest.deliveryDaysFollowTable(String, Zone, ServiceType, int)[7] -- Time elapsed: 0.001 s
+com.svv.shipping.model.ZoneTest.distanceIsMappedToZone(String, int, Zone)[1] -- Time elapsed: 0.003 s
+com.svv.shipping.model.ZoneTest.distanceIsMappedToZone(String, int, Zone)[2] -- Time elapsed: 0.002 s
+com.svv.shipping.model.ZoneTest.distanceIsMappedToZone(String, int, Zone)[3] -- Time elapsed: 0.001 s
+com.svv.shipping.model.ZoneTest.distanceIsMappedToZone(String, int, Zone)[4] -- Time elapsed: 0.001 s
+com.svv.shipping.model.ZoneTest.distanceIsMappedToZone(String, int, Zone)[5] -- Time elapsed: 0.001 s
+com.svv.shipping.model.ZoneTest.distanceIsMappedToZone(String, int, Zone)[6] -- Time elapsed: 0.001 s
+com.svv.shipping.model.ZoneTest.distanceIsMappedToZone(String, int, Zone)[7] -- Time elapsed: 0 s
+com.svv.shipping.model.ZoneTest.distanceIsMappedToZone(String, int, Zone)[8] -- Time elapsed: 0.001 s
+com.svv.shipping.model.ZoneTest.distanceIsMappedToZone(String, int, Zone)[9] -- Time elapsed: 0.001 s
+com.svv.shipping.model.ZoneTest.distanceIsMappedToZone(String, int, Zone)[10] -- Time elapsed: 0.001 s
+com.svv.shipping.model.ZoneTest.outOfRangeDistanceHasNoZone(int)[1] -- Time elapsed: 0.011 s
+com.svv.shipping.model.ZoneTest.outOfRangeDistanceHasNoZone(int)[2] -- Time elapsed: 0.002 s
+com.svv.shipping.model.ZoneTest.outOfRangeDistanceHasNoZone(int)[3] -- Time elapsed: 0.001 s

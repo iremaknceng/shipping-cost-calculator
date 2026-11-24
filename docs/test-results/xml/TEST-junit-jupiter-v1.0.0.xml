@@ -1,0 +1,1472 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="JUnit Jupiter" tests="143" skipped="0" failures="11" errors="0" time="0.547" hostname="vm" timestamp="2026-11-20T04:04:17">
+<properties>
+<property name="file.encoding" value="UTF-8"/>
+<property name="file.separator" value="/"/>
+<property name="http.nonProxyHosts" value="localhost|127.0.0.1|::1|127.*|0.*|::|169.254.*|api.anthropic.com|api-staging.anthropic.com|api-pr-preview.anthropic.com|mcp-proxy.anthropic.com|mcp-proxy-staging.anthropic.com|registry.npmjs.org|jsr.io|npm.jsr.io|pypi.org|files.pythonhosted.org|index.crates.io|proxy.golang.org|host.docker.internal|10.*|172.16.*|172.17.*|172.18.*|172.19.*|172.20.*|172.21.*|172.22.*|172.23.*|172.24.*|172.25.*|172.26.*|172.27.*|172.28.*|172.29.*|172.30.*|172.31.*|192.168.*|100.64.0.0/10|*.svc.cluster.local|*.svc.cluster.local"/>
+<property name="https.proxyHost" value="127.0.0.1"/>
+<property name="https.proxyPort" value="39147"/>
+<property name="java.class.path" value="/tmp/out/v1/classes:/tmp/out/v1/test-classes:/tmp/deps/build/junit5-local-5.11.3.jar:/tmp/deps/runner"/>
+<property name="java.class.version" value="65.0"/>
+<property name="java.home" value="/usr/lib/jvm/java-21-openjdk-amd64"/>
+<property name="java.io.tmpdir" value="/tmp"/>
+<property name="java.library.path" value="/usr/java/packages/lib:/usr/lib/x86_64-linux-gnu/jni:/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu:/usr/lib/jni:/lib:/usr/lib"/>
+<property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+<property name="java.runtime.version" value="21.0.13.0.3+1-1-24.04.1-Ubuntu"/>
+<property name="java.specification.name" value="Java Platform API Specification"/>
+<property name="java.specification.vendor" value="Oracle Corporation"/>
+<property name="java.specification.version" value="21"/>
+<property name="java.vendor" value="Ubuntu"/>
+<property name="java.vendor.url" value="https://ubuntu.com/"/>
+<property name="java.vendor.url.bug" value="https://bugs.launchpad.net/ubuntu/+source/openjdk-21"/>
+<property name="java.version" value="21.0.13.0.3"/>
+<property name="java.version.date" value="2026-10-24"/>
+<property name="java.vm.compressedOopsMode" value="32-bit"/>
+<property name="java.vm.info" value="mixed mode, sharing"/>
+<property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+<property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+<property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+<property name="java.vm.specification.version" value="21"/>
+<property name="java.vm.vendor" value="Ubuntu"/>
+<property name="java.vm.version" value="21.0.13.0.3+1-1-24.04.1-Ubuntu"/>
+<property name="javax.net.ssl.trustStore" value="/etc/ssl/certs/java/cacerts"/>
+<property name="javax.net.ssl.trustStoreType" value="JKS"/>
+<property name="jdk.debug" value="release"/>
+<property name="jdk.http.auth.proxying.disabledSchemes" value=""/>
+<property name="jdk.http.auth.tunneling.disabledSchemes" value=""/>
+<property name="line.separator" value="
+"/>
+<property name="native.encoding" value="ANSI_X3.4-1968"/>
+<property name="os.arch" value="amd64"/>
+<property name="os.name" value="Linux"/>
+<property name="os.version" value="6.18.44-fc-v726"/>
+<property name="path.separator" value=":"/>
+<property name="stderr.encoding" value="ANSI_X3.4-1968"/>
+<property name="stdout.encoding" value="ANSI_X3.4-1968"/>
+<property name="sun.arch.data.model" value="64"/>
+<property name="sun.boot.library.path" value="/usr/lib/jvm/java-21-openjdk-amd64/lib"/>
+<property name="sun.cpu.endian" value="little"/>
+<property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+<property name="sun.java.command" value="RunTests /tmp/out/v1/surefire-reports"/>
+<property name="sun.java.launcher" value="SUN_STANDARD"/>
+<property name="sun.jnu.encoding" value="ANSI_X3.4-1968"/>
+<property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+<property name="user.country" value="US"/>
+<property name="user.dir" value="/tmp/v1"/>
+<property name="user.home" value="/root"/>
+<property name="user.language" value="en"/>
+<property name="user.name" value="root"/>
+<property name="user.timezone" value="Europe/Istanbul"/>
+</properties>
+<testcase name="baseCostFollowsBrackets(String, String, String, String)[2]" classname="com.svv.shipping.service.BillableWeightAndTariffTest$BaseTariff" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.BillableWeightAndTariffTest]/[nested-class:BaseTariff]/[test-template:baseCostFollowsBrackets(java.lang.String, java.lang.String, java.lang.String, java.lang.String)]/[test-template-invocation:#2]
+display-name: TC-P-02 [BVA bracket 1 upper] billable 1.0 kg -> 40.00 TL
+]]></system-out>
+</testcase>
+<testcase name="aboveLimitIsRejected(String, int, int, int, String)[2]" classname="com.svv.shipping.service.BillableWeightAndTariffTest$Oversize" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.BillableWeightAndTariffTest]/[nested-class:Oversize]/[test-template:aboveLimitIsRejected(java.lang.String, int, int, int, java.lang.String)]/[test-template-invocation:#2]
+display-name: TC-O-04 [BVA/NEG] 100x100x100 cm (billable 333.5 kg) is rejected as oversized
+]]></system-out>
+</testcase>
+<testcase name="baseCostFollowsBrackets(String, String, String, String)[3]" classname="com.svv.shipping.service.BillableWeightAndTariffTest$BaseTariff" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.BillableWeightAndTariffTest]/[nested-class:BaseTariff]/[test-template:baseCostFollowsBrackets(java.lang.String, java.lang.String, java.lang.String, java.lang.String)]/[test-template-invocation:#3]
+display-name: TC-P-03 [BVA bracket 2 lower] billable 1.5 kg -> 44.00 TL
+]]></system-out>
+</testcase>
+<testcase name="discountRateFollowsDecisionTable(String, String, CustomerType, String, String)[11]" classname="com.svv.shipping.service.DiscountDecisionTableTest" time="0">
+<failure message="expected: &lt;0.08&gt; but was: &lt;0.05&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <0.08> but was: <0.05>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1145)
+	at com.svv.shipping.service.DiscountDecisionTableTest.discountRateFollowsDecisionTable(DiscountDecisionTableTest.java:44)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
+	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+]]></failure>
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.DiscountDecisionTableTest]/[test-template:discountRateFollowsDecisionTable(java.lang.String, java.lang.String, com.svv.shipping.model.CustomerType, java.lang.String, java.lang.String)]/[test-template-invocation:#11]
+display-name: TC-R-11 [DT R4 BVA] SILVER, subtotal 500.00 TL -> rate 0.08
+]]></system-out>
+</testcase>
+<testcase name="baseCostFollowsBrackets(String, String, String, String)[4]" classname="com.svv.shipping.service.BillableWeightAndTariffTest$BaseTariff" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.BillableWeightAndTariffTest]/[nested-class:BaseTariff]/[test-template:baseCostFollowsBrackets(java.lang.String, java.lang.String, java.lang.String, java.lang.String)]/[test-template-invocation:#4]
+display-name: TC-P-04 [BVA bracket 2 upper-1] billable 4.5 kg -> 68.00 TL
+]]></system-out>
+</testcase>
+<testcase name="baseCostFollowsBrackets(String, String, String, String)[5]" classname="com.svv.shipping.service.BillableWeightAndTariffTest$BaseTariff" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.BillableWeightAndTariffTest]/[nested-class:BaseTariff]/[test-template:baseCostFollowsBrackets(java.lang.String, java.lang.String, java.lang.String, java.lang.String)]/[test-template-invocation:#5]
+display-name: TC-P-05 [BVA bracket 2 upper] billable 5.0 kg -> 72.00 TL
+]]></system-out>
+</testcase>
+<testcase name="baseCostFollowsBrackets(String, String, String, String)[6]" classname="com.svv.shipping.service.BillableWeightAndTariffTest$BaseTariff" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.BillableWeightAndTariffTest]/[nested-class:BaseTariff]/[test-template:baseCostFollowsBrackets(java.lang.String, java.lang.String, java.lang.String, java.lang.String)]/[test-template-invocation:#6]
+display-name: TC-P-06 [BVA bracket 3 lower] billable 5.5 kg -> 75.00 TL
+]]></system-out>
+</testcase>
+<testcase name="discountRateFollowsDecisionTable(String, String, CustomerType, String, String)[10]" classname="com.svv.shipping.service.DiscountDecisionTableTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.DiscountDecisionTableTest]/[test-template:discountRateFollowsDecisionTable(java.lang.String, java.lang.String, com.svv.shipping.model.CustomerType, java.lang.String, java.lang.String)]/[test-template-invocation:#10]
+display-name: TC-R-10 [DT R3 BVA] SILVER, subtotal 499.99 TL -> rate 0.05
+]]></system-out>
+</testcase>
+<testcase name="baseCostFollowsBrackets(String, String, String, String)[7]" classname="com.svv.shipping.service.BillableWeightAndTariffTest$BaseTariff" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.BillableWeightAndTariffTest]/[nested-class:BaseTariff]/[test-template:baseCostFollowsBrackets(java.lang.String, java.lang.String, java.lang.String, java.lang.String)]/[test-template-invocation:#7]
+display-name: TC-P-07 [BVA bracket 3 upper-1] billable 14.5 kg -> 129.00 TL
+]]></system-out>
+</testcase>
+<testcase name="aboveLimitIsRejected(String, int, int, int, String)[1]" classname="com.svv.shipping.service.BillableWeightAndTariffTest$Oversize" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.BillableWeightAndTariffTest]/[nested-class:Oversize]/[test-template:aboveLimitIsRejected(java.lang.String, int, int, int, java.lang.String)]/[test-template-invocation:#1]
+display-name: TC-O-03 [BVA/NEG] 101x50x30 cm (billable 50.5 kg) is rejected as oversized
+]]></system-out>
+</testcase>
+<testcase name="baseCostFollowsBrackets(String, String, String, String)[8]" classname="com.svv.shipping.service.BillableWeightAndTariffTest$BaseTariff" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.BillableWeightAndTariffTest]/[nested-class:BaseTariff]/[test-template:baseCostFollowsBrackets(java.lang.String, java.lang.String, java.lang.String, java.lang.String)]/[test-template-invocation:#8]
+display-name: TC-P-08 [BVA bracket 3 upper] billable 15.0 kg -> 132.00 TL
+]]></system-out>
+</testcase>
+<testcase name="baseCostFollowsBrackets(String, String, String, String)[9]" classname="com.svv.shipping.service.BillableWeightAndTariffTest$BaseTariff" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.BillableWeightAndTariffTest]/[nested-class:BaseTariff]/[test-template:baseCostFollowsBrackets(java.lang.String, java.lang.String, java.lang.String, java.lang.String)]/[test-template-invocation:#9]
+display-name: TC-P-09 [BVA bracket 4 lower] billable 15.5 kg -> 134.50 TL
+]]></system-out>
+</testcase>
+<testcase name="regionalExpress()" classname="com.svv.shipping.service.ShippingCostCalculatorTest$Scenarios" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.ShippingCostCalculatorTest]/[nested-class:Scenarios]/[method:regionalExpress()]
+display-name: TC-E-02 [EP] regional express: 3 kg, 120 km -> 56 x 1.3 x 1.5 = 109.20 TL, 1 day
+]]></system-out>
+</testcase>
+<testcase name="roundingHalfUp()" classname="com.svv.shipping.service.ShippingCostCalculatorTest$Scenarios" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.ShippingCostCalculatorTest]/[nested-class:Scenarios]/[method:roundingHalfUp()]
+display-name: TC-E-09 [BVA] half-up rounding: 134.5 x 1.3 x 1.5 = 262.275 -> 262.28; SILVER 5% -> 249.17 TL
+]]></system-out>
+</testcase>
+<testcase name="baseCostFollowsBrackets(String, String, String, String)[10]" classname="com.svv.shipping.service.BillableWeightAndTariffTest$BaseTariff" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.BillableWeightAndTariffTest]/[nested-class:BaseTariff]/[test-template:baseCostFollowsBrackets(java.lang.String, java.lang.String, java.lang.String, java.lang.String)]/[test-template-invocation:#10]
+display-name: TC-P-10 [BVA bracket 4 max] billable 50.0 kg -> 307.00 TL
+]]></system-out>
+</testcase>
+<testcase name="invalidInputNeverPriced()" classname="com.svv.shipping.service.ShippingCostCalculatorTest$InvariantsAndNegative" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.ShippingCostCalculatorTest]/[nested-class:InvariantsAndNegative]/[method:invalidInputNeverPriced()]
+display-name: TC-X-03 [NEG] invalid input never produces a price (validation runs first)
+]]></system-out>
+</testcase>
+<testcase name="validDimensionsAreAccepted(String, String, int, int, int)[2]" classname="com.svv.shipping.validation.ShipmentValidatorTest$Dimensions" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.validation.ShipmentValidatorTest]/[nested-class:Dimensions]/[test-template:validDimensionsAreAccepted(java.lang.String, java.lang.String, int, int, int)]/[test-template-invocation:#2]
+display-name: TC-D-02 [BVA side min] dimensions 1x1x1 cm are accepted
+]]></system-out>
+</testcase>
+<testcase name="validDimensionsAreAccepted(String, String, int, int, int)[3]" classname="com.svv.shipping.validation.ShipmentValidatorTest$Dimensions" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.validation.ShipmentValidatorTest]/[nested-class:Dimensions]/[test-template:validDimensionsAreAccepted(java.lang.String, java.lang.String, int, int, int)]/[test-template-invocation:#3]
+display-name: TC-D-03 [BVA side min+1] dimensions 2x2x2 cm are accepted
+]]></system-out>
+</testcase>
+<testcase name="validDimensionsAreAccepted(String, String, int, int, int)[4]" classname="com.svv.shipping.validation.ShipmentValidatorTest$Dimensions" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.validation.ShipmentValidatorTest]/[nested-class:Dimensions]/[test-template:validDimensionsAreAccepted(java.lang.String, java.lang.String, int, int, int)]/[test-template-invocation:#4]
+display-name: TC-D-04 [BVA side max-1] dimensions 149x10x10 cm are accepted
+]]></system-out>
+</testcase>
+<testcase name="validDimensionsAreAccepted(String, String, int, int, int)[5]" classname="com.svv.shipping.validation.ShipmentValidatorTest$Dimensions" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.validation.ShipmentValidatorTest]/[nested-class:Dimensions]/[test-template:validDimensionsAreAccepted(java.lang.String, java.lang.String, int, int, int)]/[test-template-invocation:#5]
+display-name: TC-D-05 [BVA side max] dimensions 150x100x50 cm are accepted
+]]></system-out>
+</testcase>
+<testcase name="validDimensionsAreAccepted(String, String, int, int, int)[1]" classname="com.svv.shipping.validation.ShipmentValidatorTest$Dimensions" time="0.004">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.validation.ShipmentValidatorTest]/[nested-class:Dimensions]/[test-template:validDimensionsAreAccepted(java.lang.String, java.lang.String, int, int, int)]/[test-template-invocation:#1]
+display-name: TC-D-01 [EP  valid class] dimensions 40x30x20 cm are accepted
+]]></system-out>
+</testcase>
+<testcase name="sameDayBoundaries(String, String, int, double, boolean)[1]" classname="com.svv.shipping.service.SameDayDecisionTableTest" time="0.002">
+<failure message="Unexpected exception thrown: com.svv.shipping.service.UnsupportedServiceException: SAME_DAY is only available in the LOCAL zone (&lt;= 50 km)" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: Unexpected exception thrown: com.svv.shipping.service.UnsupportedServiceException: SAME_DAY is only available in the LOCAL zone (<= 50 km)
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
+	at org.junit.jupiter.api.AssertDoesNotThrow.createAssertionFailedError(AssertDoesNotThrow.java:84)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:75)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:58)
+	at org.junit.jupiter.api.Assertions.assertDoesNotThrow(Assertions.java:3259)
+	at com.svv.shipping.service.SameDayDecisionTableTest.sameDayBoundaries(SameDayDecisionTableTest.java:71)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
+	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: com.svv.shipping.service.UnsupportedServiceException: SAME_DAY is only available in the LOCAL zone (<= 50 km)
+	at com.svv.shipping.service.ShippingCostCalculator.checkServiceEligibility(ShippingCostCalculator.java:113)
+	at com.svv.shipping.service.ShippingCostCalculator.calculate(ShippingCostCalculator.java:54)
+	at com.svv.shipping.service.SameDayDecisionTableTest.lambda$sameDayBoundaries$1(SameDayDecisionTableTest.java:71)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:71)
+	... 42 more
+]]></failure>
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.SameDayDecisionTableTest]/[test-template:sameDayBoundaries(java.lang.String, java.lang.String, int, double, boolean)]/[test-template-invocation:#1]
+display-name: TC-S-10 [BVA] distance at LOCAL edge: 50 km, 2.0 kg -> accepted=true
+]]></system-out>
+</testcase>
+<testcase name="sameDayBoundaries(String, String, int, double, boolean)[2]" classname="com.svv.shipping.service.SameDayDecisionTableTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.SameDayDecisionTableTest]/[test-template:sameDayBoundaries(java.lang.String, java.lang.String, int, double, boolean)]/[test-template-invocation:#2]
+display-name: TC-S-11 [BVA] distance just outside LOCAL: 51 km, 2.0 kg -> accepted=false
+]]></system-out>
+</testcase>
+<testcase name="sameDayBoundaries(String, String, int, double, boolean)[3]" classname="com.svv.shipping.service.SameDayDecisionTableTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.SameDayDecisionTableTest]/[test-template:sameDayBoundaries(java.lang.String, java.lang.String, int, double, boolean)]/[test-template-invocation:#3]
+display-name: TC-S-12 [BVA] billable weight at limit: 10 km, 10.0 kg -> accepted=true
+]]></system-out>
+</testcase>
+<testcase name="sameDayBoundaries(String, String, int, double, boolean)[4]" classname="com.svv.shipping.service.SameDayDecisionTableTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.SameDayDecisionTableTest]/[test-template:sameDayBoundaries(java.lang.String, java.lang.String, int, double, boolean)]/[test-template-invocation:#4]
+display-name: TC-S-13 [BVA] billable weight just over limit: 10 km, 10.1 kg -> accepted=false
+]]></system-out>
+</testcase>
+<testcase name="validDimensionsAreAccepted(String, String, int, int, int)[6]" classname="com.svv.shipping.validation.ShipmentValidatorTest$Dimensions" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.validation.ShipmentValidatorTest]/[nested-class:Dimensions]/[test-template:validDimensionsAreAccepted(java.lang.String, java.lang.String, int, int, int)]/[test-template-invocation:#6]
+display-name: TC-D-06 [BVA sum max-1 (299)] dimensions 150x100x49 cm are accepted
+]]></system-out>
+</testcase>
+<testcase name="baseCostFollowsBrackets(String, String, String, String)[1]" classname="com.svv.shipping.service.BillableWeightAndTariffTest$BaseTariff" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.BillableWeightAndTariffTest]/[nested-class:BaseTariff]/[test-template:baseCostFollowsBrackets(java.lang.String, java.lang.String, java.lang.String, java.lang.String)]/[test-template-invocation:#1]
+display-name: TC-P-01 [EP  bracket 1] billable 0.5 kg -> 40.00 TL
+]]></system-out>
+</testcase>
+<testcase name="distanceIsMappedToZone(String, int, Zone)[10]" classname="com.svv.shipping.model.ZoneTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.model.ZoneTest]/[test-template:distanceIsMappedToZone(java.lang.String, int, com.svv.shipping.model.Zone)]/[test-template-invocation:#10]
+display-name: TC-Z-10 [BVA] 2000 km -> NATIONAL
+]]></system-out>
+</testcase>
+<testcase name="billableWeightIsComputed(String, String, double, int, int, int, String)[10]" classname="com.svv.shipping.service.BillableWeightAndTariffTest$BillableWeight" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.BillableWeightAndTariffTest]/[nested-class:BillableWeight]/[test-template:billableWeightIsComputed(java.lang.String, java.lang.String, double, int, int, int, java.lang.String)]/[test-template-invocation:#10]
+display-name: TC-B-10 [BVA actual = volumetric] 2.0 kg, 30x20x10 cm -> 2.0 kg
+]]></system-out>
+</testcase>
+<testcase name="distanceIsMappedToZone(String, int, Zone)[9]" classname="com.svv.shipping.model.ZoneTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.model.ZoneTest]/[test-template:distanceIsMappedToZone(java.lang.String, int, com.svv.shipping.model.Zone)]/[test-template-invocation:#9]
+display-name: TC-Z-09 [BVA] 301 km -> NATIONAL
+]]></system-out>
+</testcase>
+<testcase name="restrictionsOnlyApplyToSameDay()" classname="com.svv.shipping.service.SameDayDecisionTableTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.SameDayDecisionTableTest]/[method:restrictionsOnlyApplyToSameDay()]
+display-name: TC-S-14 [EP] the SAME_DAY restrictions do not apply to EXPRESS (national, heavy, fragile)
+]]></system-out>
+</testcase>
+<testcase name="breakdownToString()" classname="com.svv.shipping.service.ShippingCostCalculatorTest$InvariantsAndNegative" time="0.006">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.ShippingCostCalculatorTest]/[nested-class:InvariantsAndNegative]/[method:breakdownToString()]
+display-name: TC-X-05 [EP] the price breakdown is printable and shows the total
+]]></system-out>
+</testcase>
+<testcase name="distanceIsMappedToZone(String, int, Zone)[1]" classname="com.svv.shipping.model.ZoneTest" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.model.ZoneTest]/[test-template:distanceIsMappedToZone(java.lang.String, int, com.svv.shipping.model.Zone)]/[test-template-invocation:#1]
+display-name: TC-Z-01 [BVA] 1 km -> LOCAL
+]]></system-out>
+</testcase>
+<testcase name="distanceIsMappedToZone(String, int, Zone)[2]" classname="com.svv.shipping.model.ZoneTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.model.ZoneTest]/[test-template:distanceIsMappedToZone(java.lang.String, int, com.svv.shipping.model.Zone)]/[test-template-invocation:#2]
+display-name: TC-Z-02 [BVA] 25 km -> LOCAL
+]]></system-out>
+</testcase>
+<testcase name="distanceIsMappedToZone(String, int, Zone)[3]" classname="com.svv.shipping.model.ZoneTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.model.ZoneTest]/[test-template:distanceIsMappedToZone(java.lang.String, int, com.svv.shipping.model.Zone)]/[test-template-invocation:#3]
+display-name: TC-Z-03 [BVA] 49 km -> LOCAL
+]]></system-out>
+</testcase>
+<testcase name="distanceIsMappedToZone(String, int, Zone)[4]" classname="com.svv.shipping.model.ZoneTest" time="0">
+<failure message="expected: &lt;LOCAL&gt; but was: &lt;REGIONAL&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <LOCAL> but was: <REGIONAL>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1145)
+	at com.svv.shipping.model.ZoneTest.distanceIsMappedToZone(ZoneTest.java:31)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
+	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+]]></failure>
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.model.ZoneTest]/[test-template:distanceIsMappedToZone(java.lang.String, int, com.svv.shipping.model.Zone)]/[test-template-invocation:#4]
+display-name: TC-Z-04 [BVA] 50 km -> LOCAL
+]]></system-out>
+</testcase>
+<testcase name="distanceIsMappedToZone(String, int, Zone)[5]" classname="com.svv.shipping.model.ZoneTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.model.ZoneTest]/[test-template:distanceIsMappedToZone(java.lang.String, int, com.svv.shipping.model.Zone)]/[test-template-invocation:#5]
+display-name: TC-Z-05 [BVA] 51 km -> REGIONAL
+]]></system-out>
+</testcase>
+<testcase name="distanceIsMappedToZone(String, int, Zone)[6]" classname="com.svv.shipping.model.ZoneTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.model.ZoneTest]/[test-template:distanceIsMappedToZone(java.lang.String, int, com.svv.shipping.model.Zone)]/[test-template-invocation:#6]
+display-name: TC-Z-06 [BVA] 52 km -> REGIONAL
+]]></system-out>
+</testcase>
+<testcase name="distanceIsMappedToZone(String, int, Zone)[7]" classname="com.svv.shipping.model.ZoneTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.model.ZoneTest]/[test-template:distanceIsMappedToZone(java.lang.String, int, com.svv.shipping.model.Zone)]/[test-template-invocation:#7]
+display-name: TC-Z-07 [BVA] 299 km -> REGIONAL
+]]></system-out>
+</testcase>
+<testcase name="distanceIsMappedToZone(String, int, Zone)[8]" classname="com.svv.shipping.model.ZoneTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.model.ZoneTest]/[test-template:distanceIsMappedToZone(java.lang.String, int, com.svv.shipping.model.Zone)]/[test-template-invocation:#8]
+display-name: TC-Z-08 [BVA] 300 km -> REGIONAL
+]]></system-out>
+</testcase>
+<testcase name="validValuesAreAccepted(String, String, String, boolean)[5]" classname="com.svv.shipping.validation.ShipmentValidatorTest$DeclaredValue" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.validation.ShipmentValidatorTest]/[nested-class:DeclaredValue]/[test-template:validValuesAreAccepted(java.lang.String, java.lang.String, java.lang.String, boolean)]/[test-template-invocation:#5]
+display-name: TC-V-05 [BVA max] declared value 50000.00 TL (insured=true) is accepted
+]]></system-out>
+</testcase>
+<testcase name="validValuesAreAccepted(String, String, String, boolean)[1]" classname="com.svv.shipping.validation.ShipmentValidatorTest$DeclaredValue" time="0.075">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.validation.ShipmentValidatorTest]/[nested-class:DeclaredValue]/[test-template:validValuesAreAccepted(java.lang.String, java.lang.String, java.lang.String, boolean)]/[test-template-invocation:#1]
+display-name: TC-V-01 [BVA min not insured] declared value 0 TL (insured=false) is accepted
+]]></system-out>
+</testcase>
+<testcase name="validValuesAreAccepted(String, String, String, boolean)[2]" classname="com.svv.shipping.validation.ShipmentValidatorTest$DeclaredValue" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.validation.ShipmentValidatorTest]/[nested-class:DeclaredValue]/[test-template:validValuesAreAccepted(java.lang.String, java.lang.String, java.lang.String, boolean)]/[test-template-invocation:#2]
+display-name: TC-V-02 [BVA min insured (0.01)] declared value 0.01 TL (insured=true) is accepted
+]]></system-out>
+</testcase>
+<testcase name="validValuesAreAccepted(String, String, String, boolean)[3]" classname="com.svv.shipping.validation.ShipmentValidatorTest$DeclaredValue" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.validation.ShipmentValidatorTest]/[nested-class:DeclaredValue]/[test-template:validValuesAreAccepted(java.lang.String, java.lang.String, java.lang.String, boolean)]/[test-template-invocation:#3]
+display-name: TC-V-03 [EP  valid insured] declared value 2500 TL (insured=true) is accepted
+]]></system-out>
+</testcase>
+<testcase name="validValuesAreAccepted(String, String, String, boolean)[4]" classname="com.svv.shipping.validation.ShipmentValidatorTest$DeclaredValue" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.validation.ShipmentValidatorTest]/[nested-class:DeclaredValue]/[test-template:validValuesAreAccepted(java.lang.String, java.lang.String, java.lang.String, boolean)]/[test-template-invocation:#4]
+display-name: TC-V-04 [BVA max-0.01] declared value 49999.99 TL (insured=true) is accepted
+]]></system-out>
+</testcase>
+<testcase name="invalidWeightsAreRejected(String, String, double)[5]" classname="com.svv.shipping.validation.ShipmentValidatorTest$Weight" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.validation.ShipmentValidatorTest]/[nested-class:Weight]/[test-template:invalidWeightsAreRejected(java.lang.String, java.lang.String, double)]/[test-template-invocation:#5]
+display-name: TC-W-10 [EP  invalid: too heavy] weight 45.0 kg is rejected
+]]></system-out>
+</testcase>
+<testcase name="discountRateFollowsDecisionTable(String, String, CustomerType, String, String)[1]" classname="com.svv.shipping.service.DiscountDecisionTableTest" time="0.004">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.DiscountDecisionTableTest]/[test-template:discountRateFollowsDecisionTable(java.lang.String, java.lang.String, com.svv.shipping.model.CustomerType, java.lang.String, java.lang.String)]/[test-template-invocation:#1]
+display-name: TC-R-01 [DT R1] REGULAR, subtotal 100.00 TL -> rate 0.00
+]]></system-out>
+</testcase>
+<testcase name="discountRateFollowsDecisionTable(String, String, CustomerType, String, String)[8]" classname="com.svv.shipping.service.DiscountDecisionTableTest" time="0.003">
+<failure message="expected: &lt;0.15&gt; but was: &lt;0.10&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <0.15> but was: <0.10>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1145)
+	at com.svv.shipping.service.DiscountDecisionTableTest.discountRateFollowsDecisionTable(DiscountDecisionTableTest.java:44)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
+	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+]]></failure>
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.DiscountDecisionTableTest]/[test-template:discountRateFollowsDecisionTable(java.lang.String, java.lang.String, com.svv.shipping.model.CustomerType, java.lang.String, java.lang.String)]/[test-template-invocation:#8]
+display-name: TC-R-08 [DT R6 BVA] GOLD, subtotal 500.00 TL -> rate 0.15
+]]></system-out>
+</testcase>
+<testcase name="discountRateFollowsDecisionTable(String, String, CustomerType, String, String)[9]" classname="com.svv.shipping.service.DiscountDecisionTableTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.DiscountDecisionTableTest]/[test-template:discountRateFollowsDecisionTable(java.lang.String, java.lang.String, com.svv.shipping.model.CustomerType, java.lang.String, java.lang.String)]/[test-template-invocation:#9]
+display-name: TC-R-09 [DT R6 BVA] GOLD, subtotal 500.01 TL -> rate 0.15
+]]></system-out>
+</testcase>
+<testcase name="discountRateFollowsDecisionTable(String, String, CustomerType, String, String)[6]" classname="com.svv.shipping.service.DiscountDecisionTableTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.DiscountDecisionTableTest]/[test-template:discountRateFollowsDecisionTable(java.lang.String, java.lang.String, com.svv.shipping.model.CustomerType, java.lang.String, java.lang.String)]/[test-template-invocation:#6]
+display-name: TC-R-06 [DT R6] GOLD, subtotal 800.00 TL -> rate 0.15
+]]></system-out>
+</testcase>
+<testcase name="discountRateFollowsDecisionTable(String, String, CustomerType, String, String)[7]" classname="com.svv.shipping.service.DiscountDecisionTableTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.DiscountDecisionTableTest]/[test-template:discountRateFollowsDecisionTable(java.lang.String, java.lang.String, com.svv.shipping.model.CustomerType, java.lang.String, java.lang.String)]/[test-template-invocation:#7]
+display-name: TC-R-07 [DT R5 BVA] GOLD, subtotal 499.99 TL -> rate 0.10
+]]></system-out>
+</testcase>
+<testcase name="billableWeightIsComputed(String, String, double, int, int, int, String)[1]" classname="com.svv.shipping.service.BillableWeightAndTariffTest$BillableWeight" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.BillableWeightAndTariffTest]/[nested-class:BillableWeight]/[test-template:billableWeightIsComputed(java.lang.String, java.lang.String, double, int, int, int, java.lang.String)]/[test-template-invocation:#1]
+display-name: TC-B-01 [EP  actual weight dominates] 2.0 kg, 10x10x10 cm -> 2.0 kg
+]]></system-out>
+</testcase>
+<testcase name="discountRateFollowsDecisionTable(String, String, CustomerType, String, String)[4]" classname="com.svv.shipping.service.DiscountDecisionTableTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.DiscountDecisionTableTest]/[test-template:discountRateFollowsDecisionTable(java.lang.String, java.lang.String, com.svv.shipping.model.CustomerType, java.lang.String, java.lang.String)]/[test-template-invocation:#4]
+display-name: TC-R-04 [DT R4] SILVER, subtotal 800.00 TL -> rate 0.08
+]]></system-out>
+</testcase>
+<testcase name="billableWeightIsComputed(String, String, double, int, int, int, String)[2]" classname="com.svv.shipping.service.BillableWeightAndTariffTest$BillableWeight" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.BillableWeightAndTariffTest]/[nested-class:BillableWeight]/[test-template:billableWeightIsComputed(java.lang.String, java.lang.String, double, int, int, int, java.lang.String)]/[test-template-invocation:#2]
+display-name: TC-B-02 [EP  volumetric weight dominates] 1.0 kg, 60x40x30 cm -> 24.0 kg
+]]></system-out>
+</testcase>
+<testcase name="discountRateFollowsDecisionTable(String, String, CustomerType, String, String)[5]" classname="com.svv.shipping.service.DiscountDecisionTableTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.DiscountDecisionTableTest]/[test-template:discountRateFollowsDecisionTable(java.lang.String, java.lang.String, com.svv.shipping.model.CustomerType, java.lang.String, java.lang.String)]/[test-template-invocation:#5]
+display-name: TC-R-05 [DT R5] GOLD, subtotal 100.00 TL -> rate 0.10
+]]></system-out>
+</testcase>
+<testcase name="billableWeightIsComputed(String, String, double, int, int, int, String)[3]" classname="com.svv.shipping.service.BillableWeightAndTariffTest$BillableWeight" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.BillableWeightAndTariffTest]/[nested-class:BillableWeight]/[test-template:billableWeightIsComputed(java.lang.String, java.lang.String, double, int, int, int, java.lang.String)]/[test-template-invocation:#3]
+display-name: TC-B-03 [BVA exact half step] 2.5 kg, 10x10x10 cm -> 2.5 kg
+]]></system-out>
+</testcase>
+<testcase name="discountRateFollowsDecisionTable(String, String, CustomerType, String, String)[2]" classname="com.svv.shipping.service.DiscountDecisionTableTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.DiscountDecisionTableTest]/[test-template:discountRateFollowsDecisionTable(java.lang.String, java.lang.String, com.svv.shipping.model.CustomerType, java.lang.String, java.lang.String)]/[test-template-invocation:#2]
+display-name: TC-R-02 [DT R2] REGULAR, subtotal 800.00 TL -> rate 0.00
+]]></system-out>
+</testcase>
+<testcase name="billableWeightIsComputed(String, String, double, int, int, int, String)[4]" classname="com.svv.shipping.service.BillableWeightAndTariffTest$BillableWeight" time="0">
+<failure message="expected: &lt;2.5&gt; but was: &lt;2.0&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <2.5> but was: <2.0>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1145)
+	at com.svv.shipping.service.BillableWeightAndTariffTest$BillableWeight.billableWeightIsComputed(BillableWeightAndTariffTest.java:49)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
+	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+]]></failure>
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.BillableWeightAndTariffTest]/[nested-class:BillableWeight]/[test-template:billableWeightIsComputed(java.lang.String, java.lang.String, double, int, int, int, java.lang.String)]/[test-template-invocation:#4]
+display-name: TC-B-04 [BVA just above whole kg] 2.1 kg, 10x10x10 cm -> 2.5 kg
+]]></system-out>
+</testcase>
+<testcase name="discountRateFollowsDecisionTable(String, String, CustomerType, String, String)[3]" classname="com.svv.shipping.service.DiscountDecisionTableTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.DiscountDecisionTableTest]/[test-template:discountRateFollowsDecisionTable(java.lang.String, java.lang.String, com.svv.shipping.model.CustomerType, java.lang.String, java.lang.String)]/[test-template-invocation:#3]
+display-name: TC-R-03 [DT R3] SILVER, subtotal 100.00 TL -> rate 0.05
+]]></system-out>
+</testcase>
+<testcase name="billableWeightIsComputed(String, String, double, int, int, int, String)[5]" classname="com.svv.shipping.service.BillableWeightAndTariffTest$BillableWeight" time="0">
+<failure message="expected: &lt;3.0&gt; but was: &lt;2.5&gt;" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: expected: <3.0> but was: <2.5>
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+	at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+	at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1145)
+	at com.svv.shipping.service.BillableWeightAndTariffTest$BillableWeight.billableWeightIsComputed(BillableWeightAndTariffTest.java:49)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
+	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+]]></failure>
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.BillableWeightAndTariffTest]/[nested-class:BillableWeight]/[test-template:billableWeightIsComputed(java.lang.String, java.lang.String, double, int, int, int, java.lang.String)]/[test-template-invocation:#5]
+display-name: TC-B-05 [BVA just above half step] 2.51 kg, 10x10x10 cm -> 3.0 kg
+]]></system-out>
+</testcase>
+<testcase name="invalidWeightsAreRejected(String, String, double)[3]" classname="com.svv.shipping.validation.ShipmentValidatorTest$Weight" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.validation.ShipmentValidatorTest]/[nested-class:Weight]/[test-template:invalidWeightsAreRejected(java.lang.String, java.lang.String, double)]/[test-template-invocation:#3]
+display-name: TC-W-08 [EP  invalid: zero] weight 0.0 kg is rejected
+]]></system-out>
+</testcase>
+<testcase name="billableWeightIsComputed(String, String, double, int, int, int, String)[6]" classname="com.svv.shipping.service.BillableWeightAndTariffTest$BillableWeight" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.BillableWeightAndTariffTest]/[nested-class:BillableWeight]/[test-template:billableWeightIsComputed(java.lang.String, java.lang.String, double, int, int, int, java.lang.String)]/[test-template-invocation:#6]
+display-name: TC-B-06 [BVA minimum weight] 0.1 kg, 10x10x10 cm -> 0.5 kg
+]]></system-out>
+</testcase>
+<testcase name="invalidWeightsAreRejected(String, String, double)[4]" classname="com.svv.shipping.validation.ShipmentValidatorTest$Weight" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.validation.ShipmentValidatorTest]/[nested-class:Weight]/[test-template:invalidWeightsAreRejected(java.lang.String, java.lang.String, double)]/[test-template-invocation:#4]
+display-name: TC-W-09 [EP  invalid: negative] weight -5.0 kg is rejected
+]]></system-out>
+</testcase>
+<testcase name="billableWeightIsComputed(String, String, double, int, int, int, String)[7]" classname="com.svv.shipping.service.BillableWeightAndTariffTest$BillableWeight" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.BillableWeightAndTariffTest]/[nested-class:BillableWeight]/[test-template:billableWeightIsComputed(java.lang.String, java.lang.String, double, int, int, int, java.lang.String)]/[test-template-invocation:#7]
+display-name: TC-B-07 [BVA maximum weight] 30.0 kg, 10x10x10 cm -> 30.0 kg
+]]></system-out>
+</testcase>
+<testcase name="invalidWeightsAreRejected(String, String, double)[1]" classname="com.svv.shipping.validation.ShipmentValidatorTest$Weight" time="0.005">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.validation.ShipmentValidatorTest]/[nested-class:Weight]/[test-template:invalidWeightsAreRejected(java.lang.String, java.lang.String, double)]/[test-template-invocation:#1]
+display-name: TC-W-06 [BVA just below min] weight 0.09 kg is rejected
+]]></system-out>
+</testcase>
+<testcase name="billableWeightIsComputed(String, String, double, int, int, int, String)[8]" classname="com.svv.shipping.service.BillableWeightAndTariffTest$BillableWeight" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.BillableWeightAndTariffTest]/[nested-class:BillableWeight]/[test-template:billableWeightIsComputed(java.lang.String, java.lang.String, double, int, int, int, java.lang.String)]/[test-template-invocation:#8]
+display-name: TC-B-08 [BVA volumetric exact (10.5)] 1.0 kg, 50x30x21 cm -> 10.5 kg
+]]></system-out>
+</testcase>
+<testcase name="invalidWeightsAreRejected(String, String, double)[2]" classname="com.svv.shipping.validation.ShipmentValidatorTest$Weight" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.validation.ShipmentValidatorTest]/[nested-class:Weight]/[test-template:invalidWeightsAreRejected(java.lang.String, java.lang.String, double)]/[test-template-invocation:#2]
+display-name: TC-W-07 [BVA just above max] weight 30.01 kg is rejected
+]]></system-out>
+</testcase>
+<testcase name="billableWeightIsComputed(String, String, double, int, int, int, String)[9]" classname="com.svv.shipping.service.BillableWeightAndTariffTest$BillableWeight" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.BillableWeightAndTariffTest]/[nested-class:BillableWeight]/[test-template:billableWeightIsComputed(java.lang.String, java.lang.String, double, int, int, int, java.lang.String)]/[test-template-invocation:#9]
+display-name: TC-B-09 [BVA volumetric between steps] 1.0 kg, 41x30x25 cm -> 10.5 kg
+]]></system-out>
+</testcase>
+<testcase name="insuranceFee(String, String, String, String)[4]" classname="com.svv.shipping.service.ShippingCostCalculatorTest$Insurance" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.ShippingCostCalculatorTest]/[nested-class:Insurance]/[test-template:insuranceFee(java.lang.String, java.lang.String, java.lang.String, java.lang.String)]/[test-template-invocation:#4]
+display-name: TC-I-04 [BVA just above 1500] declared 1500.50 TL -> fee 15.01 TL
+]]></system-out>
+</testcase>
+<testcase name="insuranceFee(String, String, String, String)[3]" classname="com.svv.shipping.service.ShippingCostCalculatorTest$Insurance" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.ShippingCostCalculatorTest]/[nested-class:Insurance]/[test-template:insuranceFee(java.lang.String, java.lang.String, java.lang.String, java.lang.String)]/[test-template-invocation:#3]
+display-name: TC-I-03 [BVA exactly 1500 (1%=15)] declared 1500 TL -> fee 15.00 TL
+]]></system-out>
+</testcase>
+<testcase name="minimumInsurance()" classname="com.svv.shipping.service.ShippingCostCalculatorTest$Scenarios" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.ShippingCostCalculatorTest]/[nested-class:Scenarios]/[method:minimumInsurance()]
+display-name: TC-E-05 [EP] minimum insurance fee 15.00 TL applies for 1000 TL value: 63.00 TL
+]]></system-out>
+</testcase>
+<testcase name="insuranceFee(String, String, String, String)[6]" classname="com.svv.shipping.service.ShippingCostCalculatorTest$Insurance" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.ShippingCostCalculatorTest]/[nested-class:Insurance]/[test-template:insuranceFee(java.lang.String, java.lang.String, java.lang.String, java.lang.String)]/[test-template-invocation:#6]
+display-name: TC-I-06 [BVA max declared value] declared 50000 TL -> fee 500.00 TL
+]]></system-out>
+</testcase>
+<testcase name="insuranceFee(String, String, String, String)[5]" classname="com.svv.shipping.service.ShippingCostCalculatorTest$Insurance" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.ShippingCostCalculatorTest]/[nested-class:Insurance]/[test-template:insuranceFee(java.lang.String, java.lang.String, java.lang.String, java.lang.String)]/[test-template-invocation:#5]
+display-name: TC-I-05 [EP  percentage applies] declared 2000 TL -> fee 20.00 TL
+]]></system-out>
+</testcase>
+<testcase name="insuranceFee(String, String, String, String)[2]" classname="com.svv.shipping.service.ShippingCostCalculatorTest$Insurance" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.ShippingCostCalculatorTest]/[nested-class:Insurance]/[test-template:insuranceFee(java.lang.String, java.lang.String, java.lang.String, java.lang.String)]/[test-template-invocation:#2]
+display-name: TC-I-02 [BVA just below 1500] declared 1499.99 TL -> fee 15.00 TL
+]]></system-out>
+</testcase>
+<testcase name="insuranceFee(String, String, String, String)[1]" classname="com.svv.shipping.service.ShippingCostCalculatorTest$Insurance" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.ShippingCostCalculatorTest]/[nested-class:Insurance]/[test-template:insuranceFee(java.lang.String, java.lang.String, java.lang.String, java.lang.String)]/[test-template-invocation:#1]
+display-name: TC-I-01 [EP  minimum fee applies] declared 100 TL -> fee 15.00 TL
+]]></system-out>
+</testcase>
+<testcase name="rule1Accepted()" classname="com.svv.shipping.service.SameDayDecisionTableTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.SameDayDecisionTableTest]/[method:rule1Accepted()]
+display-name: TC-S-01 [DT R1] LOCAL, light, not fragile -> accepted, 0 delivery days
+]]></system-out>
+</testcase>
+<testcase name="nullShipment()" classname="com.svv.shipping.validation.ShipmentValidatorTest$RequiredFields" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.validation.ShipmentValidatorTest]/[nested-class:RequiredFields]/[method:nullShipment()]
+display-name: TC-N-01 [NEG] null shipment is rejected
+]]></system-out>
+</testcase>
+<testcase name="sameDayPrice()" classname="com.svv.shipping.service.ShippingCostCalculatorTest$Scenarios" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.ShippingCostCalculatorTest]/[nested-class:Scenarios]/[method:sameDayPrice()]
+display-name: TC-E-08 [EP] valid same-day parcel: billable 1.5 kg, 10 km -> 44 x 2.0 = 88.00 TL
+]]></system-out>
+</testcase>
+<testcase name="nullService()" classname="com.svv.shipping.validation.ShipmentValidatorTest$RequiredFields" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.validation.ShipmentValidatorTest]/[nested-class:RequiredFields]/[method:nullService()]
+display-name: TC-N-02 [NEG] missing service type is rejected
+]]></system-out>
+</testcase>
+<testcase name="validDistancesAreAccepted(String, String, int)[2]" classname="com.svv.shipping.validation.ShipmentValidatorTest$Distance" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.validation.ShipmentValidatorTest]/[nested-class:Distance]/[test-template:validDistancesAreAccepted(java.lang.String, java.lang.String, int)]/[test-template-invocation:#2]
+display-name: TC-K-02 [BVA min] distance 1 km is accepted
+]]></system-out>
+</testcase>
+<testcase name="validDistancesAreAccepted(String, String, int)[1]" classname="com.svv.shipping.validation.ShipmentValidatorTest$Distance" time="0.004">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.validation.ShipmentValidatorTest]/[nested-class:Distance]/[test-template:validDistancesAreAccepted(java.lang.String, java.lang.String, int)]/[test-template-invocation:#1]
+display-name: TC-K-01 [EP  valid class] distance 750 km is accepted
+]]></system-out>
+</testcase>
+<testcase name="nationalStandard()" classname="com.svv.shipping.service.ShippingCostCalculatorTest$Scenarios" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.ShippingCostCalculatorTest]/[nested-class:Scenarios]/[method:nationalStandard()]
+display-name: TC-E-07 [EP] national standard: 5 kg, 301 km -> 72 x 1.6 = 115.20 TL, 3 days
+]]></system-out>
+</testcase>
+<testcase name="validWeightsAreAccepted(String, String, double)[2]" classname="com.svv.shipping.validation.ShipmentValidatorTest$Weight" time="0.003">
+<failure message="Unexpected exception thrown: com.svv.shipping.validation.InvalidShipmentException: Weight must be between 0.1 and 30.0 kg: 0.1" type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: Unexpected exception thrown: com.svv.shipping.validation.InvalidShipmentException: Weight must be between 0.1 and 30.0 kg: 0.1
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
+	at org.junit.jupiter.api.AssertDoesNotThrow.createAssertionFailedError(AssertDoesNotThrow.java:84)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:53)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:36)
+	at org.junit.jupiter.api.Assertions.assertDoesNotThrow(Assertions.java:3199)
+	at com.svv.shipping.validation.ShipmentValidatorTest$Weight.validWeightsAreAccepted(ShipmentValidatorTest.java:51)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
+	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+Caused by: com.svv.shipping.validation.InvalidShipmentException: Weight must be between 0.1 and 30.0 kg: 0.1
+	at com.svv.shipping.validation.ShipmentValidator.validateWeight(ShipmentValidator.java:41)
+	at com.svv.shipping.validation.ShipmentValidator.validate(ShipmentValidator.java:26)
+	at com.svv.shipping.validation.ShipmentValidatorTest$Weight.lambda$validWeightsAreAccepted$0(ShipmentValidatorTest.java:51)
+	at org.junit.jupiter.api.AssertDoesNotThrow.assertDoesNotThrow(AssertDoesNotThrow.java:49)
+	... 43 more
+]]></failure>
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.validation.ShipmentValidatorTest]/[nested-class:Weight]/[test-template:validWeightsAreAccepted(java.lang.String, java.lang.String, double)]/[test-template-invocation:#2]
+display-name: TC-W-02 [BVA min] weight 0.1 kg is accepted
+]]></system-out>
+</testcase>
+<testcase name="validDistancesAreAccepted(String, String, int)[5]" classname="com.svv.shipping.validation.ShipmentValidatorTest$Distance" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.validation.ShipmentValidatorTest]/[nested-class:Distance]/[test-template:validDistancesAreAccepted(java.lang.String, java.lang.String, int)]/[test-template-invocation:#5]
+display-name: TC-K-05 [BVA max] distance 2000 km is accepted
+]]></system-out>
+</testcase>
+<testcase name="validWeightsAreAccepted(String, String, double)[1]" classname="com.svv.shipping.validation.ShipmentValidatorTest$Weight" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.validation.ShipmentValidatorTest]/[nested-class:Weight]/[test-template:validWeightsAreAccepted(java.lang.String, java.lang.String, double)]/[test-template-invocation:#1]
+display-name: TC-W-01 [EP  valid class] weight 15.0 kg is accepted
+]]></system-out>
+</testcase>
+<testcase name="validDistancesAreAccepted(String, String, int)[4]" classname="com.svv.shipping.validation.ShipmentValidatorTest$Distance" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.validation.ShipmentValidatorTest]/[nested-class:Distance]/[test-template:validDistancesAreAccepted(java.lang.String, java.lang.String, int)]/[test-template-invocation:#4]
+display-name: TC-K-04 [BVA max-1] distance 1999 km is accepted
+]]></system-out>
+</testcase>
+<testcase name="nullCustomer()" classname="com.svv.shipping.validation.ShipmentValidatorTest$RequiredFields" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.validation.ShipmentValidatorTest]/[nested-class:RequiredFields]/[method:nullCustomer()]
+display-name: TC-N-03 [NEG] missing customer type is rejected
+]]></system-out>
+</testcase>
+<testcase name="validDistancesAreAccepted(String, String, int)[3]" classname="com.svv.shipping.validation.ShipmentValidatorTest$Distance" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.validation.ShipmentValidatorTest]/[nested-class:Distance]/[test-template:validDistancesAreAccepted(java.lang.String, java.lang.String, int)]/[test-template-invocation:#3]
+display-name: TC-K-03 [BVA min+1] distance 2 km is accepted
+]]></system-out>
+</testcase>
+<testcase name="invalidDistancesAreRejected(String, String, int)[1]" classname="com.svv.shipping.validation.ShipmentValidatorTest$Distance" time="0.004">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.validation.ShipmentValidatorTest]/[nested-class:Distance]/[test-template:invalidDistancesAreRejected(java.lang.String, java.lang.String, int)]/[test-template-invocation:#1]
+display-name: TC-K-06 [BVA min-1] distance 0 km is rejected
+]]></system-out>
+</testcase>
+<testcase name="invalidDistancesAreRejected(String, String, int)[2]" classname="com.svv.shipping.validation.ShipmentValidatorTest$Distance" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.validation.ShipmentValidatorTest]/[nested-class:Distance]/[test-template:invalidDistancesAreRejected(java.lang.String, java.lang.String, int)]/[test-template-invocation:#2]
+display-name: TC-K-07 [BVA max+1] distance 2001 km is rejected
+]]></system-out>
+</testcase>
+<testcase name="invalidDistancesAreRejected(String, String, int)[3]" classname="com.svv.shipping.validation.ShipmentValidatorTest$Distance" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.validation.ShipmentValidatorTest]/[nested-class:Distance]/[test-template:invalidDistancesAreRejected(java.lang.String, java.lang.String, int)]/[test-template-invocation:#3]
+display-name: TC-K-08 [EP  invalid negative] distance -10 km is rejected
+]]></system-out>
+</testcase>
+<testcase name="invalidDistancesAreRejected(String, String, int)[4]" classname="com.svv.shipping.validation.ShipmentValidatorTest$Distance" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.validation.ShipmentValidatorTest]/[nested-class:Distance]/[test-template:invalidDistancesAreRejected(java.lang.String, java.lang.String, int)]/[test-template-invocation:#4]
+display-name: TC-K-09 [EP  invalid too far] distance 5000 km is rejected
+]]></system-out>
+</testcase>
+<testcase name="totalIsConsistent(ServiceType, CustomerType, int, boolean)[2]" classname="com.svv.shipping.service.ShippingCostCalculatorTest$InvariantsAndNegative" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.ShippingCostCalculatorTest]/[nested-class:InvariantsAndNegative]/[test-template:totalIsConsistent(com.svv.shipping.model.ServiceType, com.svv.shipping.model.CustomerType, int, boolean)]/[test-template-invocation:#2]
+display-name: TC-X-01.2 [EP] total = subtotal - discount + insurance (EXPRESS, SILVER, 200 km)
+]]></system-out>
+</testcase>
+<testcase name="totalIsConsistent(ServiceType, CustomerType, int, boolean)[3]" classname="com.svv.shipping.service.ShippingCostCalculatorTest$InvariantsAndNegative" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.ShippingCostCalculatorTest]/[nested-class:InvariantsAndNegative]/[test-template:totalIsConsistent(com.svv.shipping.model.ServiceType, com.svv.shipping.model.CustomerType, int, boolean)]/[test-template-invocation:#3]
+display-name: TC-X-01.3 [EP] total = subtotal - discount + insurance (EXPRESS, GOLD, 1500 km)
+]]></system-out>
+</testcase>
+<testcase name="atOrBelowLimitIsAccepted(String, int, int, int, String)[1]" classname="com.svv.shipping.service.BillableWeightAndTariffTest$Oversize" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.BillableWeightAndTariffTest]/[nested-class:Oversize]/[test-template:atOrBelowLimitIsAccepted(java.lang.String, int, int, int, java.lang.String)]/[test-template-invocation:#1]
+display-name: TC-O-01 [BVA] 100x50x30 cm (billable 50.0 kg) is accepted
+]]></system-out>
+</testcase>
+<testcase name="atOrBelowLimitIsAccepted(String, int, int, int, String)[2]" classname="com.svv.shipping.service.BillableWeightAndTariffTest$Oversize" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.BillableWeightAndTariffTest]/[nested-class:Oversize]/[test-template:atOrBelowLimitIsAccepted(java.lang.String, int, int, int, java.lang.String)]/[test-template-invocation:#2]
+display-name: TC-O-02 [BVA] 99x50x30 cm (billable 49.5 kg) is accepted
+]]></system-out>
+</testcase>
+<testcase name="totalIsConsistent(ServiceType, CustomerType, int, boolean)[1]" classname="com.svv.shipping.service.ShippingCostCalculatorTest$InvariantsAndNegative" time="0.007">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.ShippingCostCalculatorTest]/[nested-class:InvariantsAndNegative]/[test-template:totalIsConsistent(com.svv.shipping.model.ServiceType, com.svv.shipping.model.CustomerType, int, boolean)]/[test-template-invocation:#1]
+display-name: TC-X-01.1 [EP] total = subtotal - discount + insurance (STANDARD, REGULAR, 30 km)
+]]></system-out>
+</testcase>
+<testcase name="complexScenario()" classname="com.svv.shipping.service.ShippingCostCalculatorTest$Scenarios" time="0.001">
+<failure message="Multiple Failures (2 failures)
+	org.opentest4j.AssertionFailedError: expected: &lt;81.87&gt; but was: &lt;93.87&gt;
+	org.opentest4j.AssertionFailedError: expected: &lt;543.93&gt; but was: &lt;531.93&gt;" type="org.opentest4j.MultipleFailuresError"><![CDATA[org.opentest4j.MultipleFailuresError: Multiple Failures (2 failures)
+	org.opentest4j.AssertionFailedError: expected: <81.87> but was: <93.87>
+	org.opentest4j.AssertionFailedError: expected: <543.93> but was: <531.93>
+	at org.junit.jupiter.api.AssertAll.assertAll(AssertAll.java:80)
+	at org.junit.jupiter.api.AssertAll.assertAll(AssertAll.java:44)
+	at org.junit.jupiter.api.AssertAll.assertAll(AssertAll.java:38)
+	at org.junit.jupiter.api.Assertions.assertAll(Assertions.java:2944)
+	at com.svv.shipping.service.ShippingCostCalculatorTest$Scenarios.complexScenario(ShippingCostCalculatorTest.java:109)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	Suppressed: org.opentest4j.AssertionFailedError: expected: <81.87> but was: <93.87>
+		at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+		at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+		at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+		at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+		at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+		at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1145)
+		at com.svv.shipping.service.ShippingCostCalculatorTest$Scenarios.lambda$complexScenario$21(ShippingCostCalculatorTest.java:115)
+		at org.junit.jupiter.api.AssertAll.lambda$assertAll$0(AssertAll.java:68)
+		at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+		at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
+		at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+		at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+		at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+		at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+		at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+		at org.junit.jupiter.api.AssertAll.assertAll(AssertAll.java:77)
+		... 8 more
+	Suppressed: org.opentest4j.AssertionFailedError: expected: <543.93> but was: <531.93>
+		at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:151)
+		at org.junit.jupiter.api.AssertionFailureBuilder.buildAndThrow(AssertionFailureBuilder.java:132)
+		at org.junit.jupiter.api.AssertEquals.failNotEqual(AssertEquals.java:197)
+		at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
+		at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
+		at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1145)
+		at com.svv.shipping.service.ShippingCostCalculatorTest$Scenarios.lambda$complexScenario$23(ShippingCostCalculatorTest.java:117)
+		at org.junit.jupiter.api.AssertAll.lambda$assertAll$0(AssertAll.java:68)
+		at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+		at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
+		at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+		at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+		at java.base/java.util.stream.ReduceOps$ReduceOp.evaluateSequential(ReduceOps.java:921)
+		at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+		at java.base/java.util.stream.ReferencePipeline.collect(ReferencePipeline.java:682)
+		at org.junit.jupiter.api.AssertAll.assertAll(AssertAll.java:77)
+		... 8 more
+]]></failure>
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.ShippingCostCalculatorTest]/[nested-class:Scenarios]/[method:complexScenario()]
+display-name: TC-E-06 [DT] GOLD, high volume, fragile, insured, volumetric, national express -> 543.93 TL
+]]></system-out>
+</testcase>
+<testcase name="fragileSurcharge()" classname="com.svv.shipping.service.ShippingCostCalculatorTest$Scenarios" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.ShippingCostCalculatorTest]/[nested-class:Scenarios]/[method:fragileSurcharge()]
+display-name: TC-E-03 [EP] fragile surcharge of 25.00 TL is added: 48 + 25 = 73.00 TL
+]]></system-out>
+</testcase>
+<testcase name="nullDeclaredValue()" classname="com.svv.shipping.validation.ShipmentValidatorTest$DeclaredValue" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.validation.ShipmentValidatorTest]/[nested-class:DeclaredValue]/[method:nullDeclaredValue()]
+display-name: TC-V-10 [NEG] missing declared value is rejected
+]]></system-out>
+</testcase>
+<testcase name="invalidValuesAreRejected(String, String, String, boolean, String)[2]" classname="com.svv.shipping.validation.ShipmentValidatorTest$DeclaredValue" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.validation.ShipmentValidatorTest]/[nested-class:DeclaredValue]/[test-template:invalidValuesAreRejected(java.lang.String, java.lang.String, java.lang.String, boolean, java.lang.String)]/[test-template-invocation:#2]
+display-name: TC-V-07 [BVA above max] declared value 50000.01 TL (insured=false) is rejected
+]]></system-out>
+</testcase>
+<testcase name="invalidValuesAreRejected(String, String, String, boolean, String)[3]" classname="com.svv.shipping.validation.ShipmentValidatorTest$DeclaredValue" time="0.006">
+<failure message="Expected com.svv.shipping.validation.InvalidShipmentException to be thrown, but nothing was thrown." type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: Expected com.svv.shipping.validation.InvalidShipmentException to be thrown, but nothing was thrown.
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:73)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:35)
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3128)
+	at com.svv.shipping.validation.ShipmentValidatorTest.assertRejected(ShipmentValidatorTest.java:33)
+	at com.svv.shipping.validation.ShipmentValidatorTest$DeclaredValue.invalidValuesAreRejected(ShipmentValidatorTest.java:193)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
+	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+]]></failure>
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.validation.ShipmentValidatorTest]/[nested-class:DeclaredValue]/[test-template:invalidValuesAreRejected(java.lang.String, java.lang.String, java.lang.String, boolean, java.lang.String)]/[test-template-invocation:#3]
+display-name: TC-V-08 [NEG insured without value] declared value 0 TL (insured=true) is rejected
+]]></system-out>
+</testcase>
+<testcase name="totalIsConsistent(ServiceType, CustomerType, int, boolean)[4]" classname="com.svv.shipping.service.ShippingCostCalculatorTest$InvariantsAndNegative" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.ShippingCostCalculatorTest]/[nested-class:InvariantsAndNegative]/[test-template:totalIsConsistent(com.svv.shipping.model.ServiceType, com.svv.shipping.model.CustomerType, int, boolean)]/[test-template-invocation:#4]
+display-name: TC-X-01.4 [EP] total = subtotal - discount + insurance (STANDARD, GOLD, 2000 km)
+]]></system-out>
+</testcase>
+<testcase name="invalidValuesAreRejected(String, String, String, boolean, String)[1]" classname="com.svv.shipping.validation.ShipmentValidatorTest$DeclaredValue" time="0.003">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.validation.ShipmentValidatorTest]/[nested-class:DeclaredValue]/[test-template:invalidValuesAreRejected(java.lang.String, java.lang.String, java.lang.String, boolean, java.lang.String)]/[test-template-invocation:#1]
+display-name: TC-V-06 [BVA below min] declared value -0.01 TL (insured=false) is rejected
+]]></system-out>
+</testcase>
+<testcase name="simpleLocalStandard()" classname="com.svv.shipping.service.ShippingCostCalculatorTest$Scenarios" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.ShippingCostCalculatorTest]/[nested-class:Scenarios]/[method:simpleLocalStandard()]
+display-name: TC-E-01 [EP] simple local standard parcel: 2 kg, 30 km -> 48.00 TL
+]]></system-out>
+</testcase>
+<testcase name="invalidValuesAreRejected(String, String, String, boolean, String)[4]" classname="com.svv.shipping.validation.ShipmentValidatorTest$DeclaredValue" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.validation.ShipmentValidatorTest]/[nested-class:DeclaredValue]/[test-template:invalidValuesAreRejected(java.lang.String, java.lang.String, java.lang.String, boolean, java.lang.String)]/[test-template-invocation:#4]
+display-name: TC-V-09 [EP  invalid negative] declared value -100 TL (insured=true) is rejected
+]]></system-out>
+</testcase>
+<testcase name="nullShipment()" classname="com.svv.shipping.service.ShippingCostCalculatorTest$InvariantsAndNegative" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.ShippingCostCalculatorTest]/[nested-class:InvariantsAndNegative]/[method:nullShipment()]
+display-name: TC-X-02 [NEG] calculate(null) is rejected with InvalidShipmentException
+]]></system-out>
+</testcase>
+<testcase name="customValidatorIsUsed()" classname="com.svv.shipping.service.ShippingCostCalculatorTest$InvariantsAndNegative" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.ShippingCostCalculatorTest]/[nested-class:InvariantsAndNegative]/[method:customValidatorIsUsed()]
+display-name: TC-X-04 [NEG] a calculator built with a custom validator still validates
+]]></system-out>
+</testcase>
+<testcase name="invalidDimensionsAreRejected(String, String, int, int, int, String)[7]" classname="com.svv.shipping.validation.ShipmentValidatorTest$Dimensions" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.validation.ShipmentValidatorTest]/[nested-class:Dimensions]/[test-template:invalidDimensionsAreRejected(java.lang.String, java.lang.String, int, int, int, java.lang.String)]/[test-template-invocation:#7]
+display-name: TC-D-13 [EP  negative side] dimensions -5x20x10 cm are rejected
+]]></system-out>
+</testcase>
+<testcase name="otherRulesAreRejected(String, String, int, double, int, int, int, boolean)[2]" classname="com.svv.shipping.service.SameDayDecisionTableTest" time="0">
+<failure message="Expected com.svv.shipping.service.UnsupportedServiceException to be thrown, but nothing was thrown." type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: Expected com.svv.shipping.service.UnsupportedServiceException to be thrown, but nothing was thrown.
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:73)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:35)
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3128)
+	at com.svv.shipping.service.SameDayDecisionTableTest.otherRulesAreRejected(SameDayDecisionTableTest.java:58)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.ReferencePipeline$Head.forEach(ReferencePipeline.java:762)
+	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+]]></failure>
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.SameDayDecisionTableTest]/[test-template:otherRulesAreRejected(java.lang.String, java.lang.String, int, double, int, int, int, boolean)]/[test-template-invocation:#2]
+display-name: TC-S-03 [DT R3] 10 km, 2.0 kg, 60x40x30 cm, fragile=false -> rejected
+]]></system-out>
+</testcase>
+<testcase name="invalidDimensionsAreRejected(String, String, int, int, int, String)[8]" classname="com.svv.shipping.validation.ShipmentValidatorTest$Dimensions" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.validation.ShipmentValidatorTest]/[nested-class:Dimensions]/[test-template:invalidDimensionsAreRejected(java.lang.String, java.lang.String, int, int, int, java.lang.String)]/[test-template-invocation:#8]
+display-name: TC-D-14 [BVA sum max+1 (301)] dimensions 150x100x51 cm are rejected
+]]></system-out>
+</testcase>
+<testcase name="validWeightsAreAccepted(String, String, double)[5]" classname="com.svv.shipping.validation.ShipmentValidatorTest$Weight" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.validation.ShipmentValidatorTest]/[nested-class:Weight]/[test-template:validWeightsAreAccepted(java.lang.String, java.lang.String, double)]/[test-template-invocation:#5]
+display-name: TC-W-05 [BVA max] weight 30.0 kg is accepted
+]]></system-out>
+</testcase>
+<testcase name="otherRulesAreRejected(String, String, int, double, int, int, int, boolean)[1]" classname="com.svv.shipping.service.SameDayDecisionTableTest" time="0.003">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.SameDayDecisionTableTest]/[test-template:otherRulesAreRejected(java.lang.String, java.lang.String, int, double, int, int, int, boolean)]/[test-template-invocation:#1]
+display-name: TC-S-02 [DT R2] 10 km, 2.0 kg, 20x20x10 cm, fragile=true -> rejected
+]]></system-out>
+</testcase>
+<testcase name="invalidDimensionsAreRejected(String, String, int, int, int, String)[5]" classname="com.svv.shipping.validation.ShipmentValidatorTest$Dimensions" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.validation.ShipmentValidatorTest]/[nested-class:Dimensions]/[test-template:invalidDimensionsAreRejected(java.lang.String, java.lang.String, int, int, int, java.lang.String)]/[test-template-invocation:#5]
+display-name: TC-D-11 [BVA height below min] dimensions 30x20x0 cm are rejected
+]]></system-out>
+</testcase>
+<testcase name="validWeightsAreAccepted(String, String, double)[4]" classname="com.svv.shipping.validation.ShipmentValidatorTest$Weight" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.validation.ShipmentValidatorTest]/[nested-class:Weight]/[test-template:validWeightsAreAccepted(java.lang.String, java.lang.String, double)]/[test-template-invocation:#4]
+display-name: TC-W-04 [BVA just below max] weight 29.99 kg is accepted
+]]></system-out>
+</testcase>
+<testcase name="outOfRangeDistanceHasNoZone(int)[2]" classname="com.svv.shipping.model.ZoneTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.model.ZoneTest]/[test-template:outOfRangeDistanceHasNoZone(int)]/[test-template-invocation:#2]
+display-name: TC-Z-11.2 [NEG] -1 km has no zone
+]]></system-out>
+</testcase>
+<testcase name="otherRulesAreRejected(String, String, int, double, int, int, int, boolean)[4]" classname="com.svv.shipping.service.SameDayDecisionTableTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.SameDayDecisionTableTest]/[test-template:otherRulesAreRejected(java.lang.String, java.lang.String, int, double, int, int, int, boolean)]/[test-template-invocation:#4]
+display-name: TC-S-05 [DT R4] 10 km, 12.0 kg, 20x20x10 cm, fragile=true -> rejected
+]]></system-out>
+</testcase>
+<testcase name="invalidDimensionsAreRejected(String, String, int, int, int, String)[6]" classname="com.svv.shipping.validation.ShipmentValidatorTest$Dimensions" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.validation.ShipmentValidatorTest]/[nested-class:Dimensions]/[test-template:invalidDimensionsAreRejected(java.lang.String, java.lang.String, int, int, int, java.lang.String)]/[test-template-invocation:#6]
+display-name: TC-D-12 [BVA height above max] dimensions 30x20x151 cm are rejected
+]]></system-out>
+</testcase>
+<testcase name="validWeightsAreAccepted(String, String, double)[3]" classname="com.svv.shipping.validation.ShipmentValidatorTest$Weight" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.validation.ShipmentValidatorTest]/[nested-class:Weight]/[test-template:validWeightsAreAccepted(java.lang.String, java.lang.String, double)]/[test-template-invocation:#3]
+display-name: TC-W-03 [BVA just above min] weight 0.11 kg is accepted
+]]></system-out>
+</testcase>
+<testcase name="outOfRangeDistanceHasNoZone(int)[3]" classname="com.svv.shipping.model.ZoneTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.model.ZoneTest]/[test-template:outOfRangeDistanceHasNoZone(int)]/[test-template-invocation:#3]
+display-name: TC-Z-11.3 [NEG] 2001 km has no zone
+]]></system-out>
+</testcase>
+<testcase name="otherRulesAreRejected(String, String, int, double, int, int, int, boolean)[3]" classname="com.svv.shipping.service.SameDayDecisionTableTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.SameDayDecisionTableTest]/[test-template:otherRulesAreRejected(java.lang.String, java.lang.String, int, double, int, int, int, boolean)]/[test-template-invocation:#3]
+display-name: TC-S-04 [DT R3b] 10 km, 12.0 kg, 20x20x10 cm, fragile=false -> rejected
+]]></system-out>
+</testcase>
+<testcase name="invalidDimensionsAreRejected(String, String, int, int, int, String)[3]" classname="com.svv.shipping.validation.ShipmentValidatorTest$Dimensions" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.validation.ShipmentValidatorTest]/[nested-class:Dimensions]/[test-template:invalidDimensionsAreRejected(java.lang.String, java.lang.String, int, int, int, java.lang.String)]/[test-template-invocation:#3]
+display-name: TC-D-09 [BVA width below min] dimensions 30x0x10 cm are rejected
+]]></system-out>
+</testcase>
+<testcase name="invalidDimensionsAreRejected(String, String, int, int, int, String)[4]" classname="com.svv.shipping.validation.ShipmentValidatorTest$Dimensions" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.validation.ShipmentValidatorTest]/[nested-class:Dimensions]/[test-template:invalidDimensionsAreRejected(java.lang.String, java.lang.String, int, int, int, java.lang.String)]/[test-template-invocation:#4]
+display-name: TC-D-10 [BVA width above max] dimensions 30x151x10 cm are rejected
+]]></system-out>
+</testcase>
+<testcase name="outOfRangeDistanceHasNoZone(int)[1]" classname="com.svv.shipping.model.ZoneTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.model.ZoneTest]/[test-template:outOfRangeDistanceHasNoZone(int)]/[test-template-invocation:#1]
+display-name: TC-Z-11.1 [NEG] 0 km has no zone
+]]></system-out>
+</testcase>
+<testcase name="invalidDimensionsAreRejected(String, String, int, int, int, String)[1]" classname="com.svv.shipping.validation.ShipmentValidatorTest$Dimensions" time="0.003">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.validation.ShipmentValidatorTest]/[nested-class:Dimensions]/[test-template:invalidDimensionsAreRejected(java.lang.String, java.lang.String, int, int, int, java.lang.String)]/[test-template-invocation:#1]
+display-name: TC-D-07 [BVA length below min] dimensions 0x20x10 cm are rejected
+]]></system-out>
+</testcase>
+<testcase name="invalidDimensionsAreRejected(String, String, int, int, int, String)[2]" classname="com.svv.shipping.validation.ShipmentValidatorTest$Dimensions" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.validation.ShipmentValidatorTest]/[nested-class:Dimensions]/[test-template:invalidDimensionsAreRejected(java.lang.String, java.lang.String, int, int, int, java.lang.String)]/[test-template-invocation:#2]
+display-name: TC-D-08 [BVA length above max] dimensions 151x20x10 cm are rejected
+]]></system-out>
+</testcase>
+<testcase name="otherRulesAreRejected(String, String, int, double, int, int, int, boolean)[6]" classname="com.svv.shipping.service.SameDayDecisionTableTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.SameDayDecisionTableTest]/[test-template:otherRulesAreRejected(java.lang.String, java.lang.String, int, double, int, int, int, boolean)]/[test-template-invocation:#6]
+display-name: TC-S-07 [DT R6] 120 km, 2.0 kg, 20x20x10 cm, fragile=true -> rejected
+]]></system-out>
+</testcase>
+<testcase name="otherRulesAreRejected(String, String, int, double, int, int, int, boolean)[5]" classname="com.svv.shipping.service.SameDayDecisionTableTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.SameDayDecisionTableTest]/[test-template:otherRulesAreRejected(java.lang.String, java.lang.String, int, double, int, int, int, boolean)]/[test-template-invocation:#5]
+display-name: TC-S-06 [DT R5] 120 km, 2.0 kg, 20x20x10 cm, fragile=false -> rejected
+]]></system-out>
+</testcase>
+<testcase name="otherRulesAreRejected(String, String, int, double, int, int, int, boolean)[8]" classname="com.svv.shipping.service.SameDayDecisionTableTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.SameDayDecisionTableTest]/[test-template:otherRulesAreRejected(java.lang.String, java.lang.String, int, double, int, int, int, boolean)]/[test-template-invocation:#8]
+display-name: TC-S-09 [DT R8] 120 km, 12.0 kg, 20x20x10 cm, fragile=true -> rejected
+]]></system-out>
+</testcase>
+<testcase name="notInsured()" classname="com.svv.shipping.service.ShippingCostCalculatorTest$Insurance" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.ShippingCostCalculatorTest]/[nested-class:Insurance]/[method:notInsured()]
+display-name: TC-I-07 [EP] no insurance fee when the parcel is not insured, even with a declared value
+]]></system-out>
+</testcase>
+<testcase name="otherRulesAreRejected(String, String, int, double, int, int, int, boolean)[7]" classname="com.svv.shipping.service.SameDayDecisionTableTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.SameDayDecisionTableTest]/[test-template:otherRulesAreRejected(java.lang.String, java.lang.String, int, double, int, int, int, boolean)]/[test-template-invocation:#7]
+display-name: TC-S-08 [DT R7] 120 km, 12.0 kg, 20x20x10 cm, fragile=false -> rejected
+]]></system-out>
+</testcase>
+<testcase name="deliveryDaysFollowTable(String, Zone, ServiceType, int)[3]" classname="com.svv.shipping.model.ZoneTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.model.ZoneTest]/[test-template:deliveryDaysFollowTable(java.lang.String, com.svv.shipping.model.Zone, com.svv.shipping.model.ServiceType, int)]/[test-template-invocation:#3]
+display-name: TC-T-03 [DT] NATIONAL + STANDARD -> 3 day(s)
+]]></system-out>
+</testcase>
+<testcase name="deliveryDaysFollowTable(String, Zone, ServiceType, int)[2]" classname="com.svv.shipping.model.ZoneTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.model.ZoneTest]/[test-template:deliveryDaysFollowTable(java.lang.String, com.svv.shipping.model.Zone, com.svv.shipping.model.ServiceType, int)]/[test-template-invocation:#2]
+display-name: TC-T-02 [DT] REGIONAL + STANDARD -> 2 day(s)
+]]></system-out>
+</testcase>
+<testcase name="deliveryDaysFollowTable(String, Zone, ServiceType, int)[1]" classname="com.svv.shipping.model.ZoneTest" time="0.002">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.model.ZoneTest]/[test-template:deliveryDaysFollowTable(java.lang.String, com.svv.shipping.model.Zone, com.svv.shipping.model.ServiceType, int)]/[test-template-invocation:#1]
+display-name: TC-T-01 [DT] LOCAL + STANDARD -> 1 day(s)
+]]></system-out>
+</testcase>
+<testcase name="silverDiscount()" classname="com.svv.shipping.service.ShippingCostCalculatorTest$Scenarios" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.service.ShippingCostCalculatorTest]/[nested-class:Scenarios]/[method:silverDiscount()]
+display-name: TC-E-04 [EP] SILVER below threshold gets 5%: 48.00 - 2.40 = 45.60 TL
+]]></system-out>
+</testcase>
+<testcase name="deliveryDaysFollowTable(String, Zone, ServiceType, int)[7]" classname="com.svv.shipping.model.ZoneTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.model.ZoneTest]/[test-template:deliveryDaysFollowTable(java.lang.String, com.svv.shipping.model.Zone, com.svv.shipping.model.ServiceType, int)]/[test-template-invocation:#7]
+display-name: TC-T-07 [DT] LOCAL + SAME_DAY -> 0 day(s)
+]]></system-out>
+</testcase>
+<testcase name="deliveryDaysFollowTable(String, Zone, ServiceType, int)[6]" classname="com.svv.shipping.model.ZoneTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.model.ZoneTest]/[test-template:deliveryDaysFollowTable(java.lang.String, com.svv.shipping.model.Zone, com.svv.shipping.model.ServiceType, int)]/[test-template-invocation:#6]
+display-name: TC-T-06 [DT] NATIONAL + EXPRESS -> 2 day(s)
+]]></system-out>
+</testcase>
+<testcase name="deliveryDaysFollowTable(String, Zone, ServiceType, int)[5]" classname="com.svv.shipping.model.ZoneTest" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.model.ZoneTest]/[test-template:deliveryDaysFollowTable(java.lang.String, com.svv.shipping.model.Zone, com.svv.shipping.model.ServiceType, int)]/[test-template-invocation:#5]
+display-name: TC-T-05 [DT] REGIONAL + EXPRESS -> 1 day(s)
+]]></system-out>
+</testcase>
+<testcase name="deliveryDaysFollowTable(String, Zone, ServiceType, int)[4]" classname="com.svv.shipping.model.ZoneTest" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.model.ZoneTest]/[test-template:deliveryDaysFollowTable(java.lang.String, com.svv.shipping.model.Zone, com.svv.shipping.model.ServiceType, int)]/[test-template-invocation:#4]
+display-name: TC-T-04 [DT] LOCAL + EXPRESS -> 1 day(s)
+]]></system-out>
+</testcase>
+<testcase name="nonFiniteWeightsAreRejected(double)[2]" classname="com.svv.shipping.validation.ShipmentValidatorTest$Weight" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.validation.ShipmentValidatorTest]/[nested-class:Weight]/[test-template:nonFiniteWeightsAreRejected(double)]/[test-template-invocation:#2]
+display-name: TC-W-11.2 [NEG] non-finite weight Infinity is rejected
+]]></system-out>
+</testcase>
+<testcase name="nonFiniteWeightsAreRejected(double)[3]" classname="com.svv.shipping.validation.ShipmentValidatorTest$Weight" time="0">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.validation.ShipmentValidatorTest]/[nested-class:Weight]/[test-template:nonFiniteWeightsAreRejected(double)]/[test-template-invocation:#3]
+display-name: TC-W-11.3 [NEG] non-finite weight -Infinity is rejected
+]]></system-out>
+</testcase>
+<testcase name="allEnumValuesAccepted()" classname="com.svv.shipping.validation.ShipmentValidatorTest$RequiredFields" time="0.001">
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.validation.ShipmentValidatorTest]/[nested-class:RequiredFields]/[method:allEnumValuesAccepted()]
+display-name: TC-N-04 [EP] every service/customer combination with valid data is accepted
+]]></system-out>
+</testcase>
+<testcase name="nonFiniteWeightsAreRejected(double)[1]" classname="com.svv.shipping.validation.ShipmentValidatorTest$Weight" time="0.005">
+<failure message="Expected com.svv.shipping.validation.InvalidShipmentException to be thrown, but nothing was thrown." type="org.opentest4j.AssertionFailedError"><![CDATA[org.opentest4j.AssertionFailedError: Expected com.svv.shipping.validation.InvalidShipmentException to be thrown, but nothing was thrown.
+	at org.junit.jupiter.api.AssertionFailureBuilder.build(AssertionFailureBuilder.java:152)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:73)
+	at org.junit.jupiter.api.AssertThrows.assertThrows(AssertThrows.java:35)
+	at org.junit.jupiter.api.Assertions.assertThrows(Assertions.java:3128)
+	at com.svv.shipping.validation.ShipmentValidatorTest.assertRejected(ShipmentValidatorTest.java:33)
+	at com.svv.shipping.validation.ShipmentValidatorTest$Weight.nonFiniteWeightsAreRejected(ShipmentValidatorTest.java:69)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:184)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.Spliterators$ArraySpliterator.forEachRemaining(Spliterators.java:1024)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base/java.util.stream.ReferencePipeline$7$1.accept(ReferencePipeline.java:276)
+	at java.base/java.util.ArrayList$ArrayListSpliterator.forEachRemaining(ArrayList.java:1708)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:151)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:174)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+]]></failure>
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]/[class:com.svv.shipping.validation.ShipmentValidatorTest]/[nested-class:Weight]/[test-template:nonFiniteWeightsAreRejected(double)]/[test-template-invocation:#1]
+display-name: TC-W-11.1 [NEG] non-finite weight NaN is rejected
+]]></system-out>
+</testcase>
+<system-out><![CDATA[
+unique-id: [engine:junit-jupiter]
+display-name: JUnit Jupiter
+]]></system-out>
+</testsuite>

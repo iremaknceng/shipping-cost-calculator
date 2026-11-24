@@ -1,0 +1,11 @@
+-------------------------------------------------------------------------------
+Test set: com.svv.shipping.service.ShippingCostCalculatorTest$Insurance
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.030 s -- in com.svv.shipping.service.ShippingCostCalculatorTest$Insurance
+com.svv.shipping.service.ShippingCostCalculatorTest$Insurance.insuranceFee(String, String, String, String)[1] -- Time elapsed: 0.001 s
+com.svv.shipping.service.ShippingCostCalculatorTest$Insurance.insuranceFee(String, String, String, String)[2] -- Time elapsed: 0.001 s
+com.svv.shipping.service.ShippingCostCalculatorTest$Insurance.insuranceFee(String, String, String, String)[3] -- Time elapsed: 0.001 s
+com.svv.shipping.service.ShippingCostCalculatorTest$Insurance.insuranceFee(String, String, String, String)[4] -- Time elapsed: 0.001 s
+com.svv.shipping.service.ShippingCostCalculatorTest$Insurance.insuranceFee(String, String, String, String)[5] -- Time elapsed: 0 s
+com.svv.shipping.service.ShippingCostCalculatorTest$Insurance.insuranceFee(String, String, String, String)[6] -- Time elapsed: 0 s
+com.svv.shipping.service.ShippingCostCalculatorTest$Insurance.notInsured -- Time elapsed: 0 s

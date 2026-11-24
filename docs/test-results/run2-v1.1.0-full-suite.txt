@@ -1,0 +1,206 @@
++ ShipmentValidator - input validation (FR-01..FR-05)
+  + FR-05 Declared value and insurance
+    + validValuesAreAccepted(String, String, String, boolean)
+      [PASS] TC-V-01 [BVA min not insured] declared value 0 TL (insured=false) is accepted
+      [PASS] TC-V-02 [BVA min insured (0.01)] declared value 0.01 TL (insured=true) is accepted
+      [PASS] TC-V-03 [EP  valid insured] declared value 2500 TL (insured=true) is accepted
+      [PASS] TC-V-04 [BVA max-0.01] declared value 49999.99 TL (insured=true) is accepted
+      [PASS] TC-V-05 [BVA max] declared value 50000.00 TL (insured=true) is accepted
+    [PASS] TC-V-10 [NEG] missing declared value is rejected
+    + invalidValuesAreRejected(String, String, String, boolean, String)
+      [PASS] TC-V-06 [BVA below min] declared value -0.01 TL (insured=false) is rejected
+      [PASS] TC-V-07 [BVA above max] declared value 50000.01 TL (insured=false) is rejected
+      [PASS] TC-V-08 [NEG insured without value] declared value 0 TL (insured=true) is rejected
+      [PASS] TC-V-09 [EP  invalid negative] declared value -100 TL (insured=true) is rejected
+  + FR-04 Required fields
+    [PASS] TC-N-02 [NEG] missing service type is rejected
+    [PASS] TC-N-01 [NEG] null shipment is rejected
+    [PASS] TC-N-03 [NEG] missing customer type is rejected
+    [PASS] TC-N-04 [EP] every service/customer combination with valid data is accepted
+  + FR-03 Distance
+    + invalidDistancesAreRejected(String, String, int)
+      [PASS] TC-K-06 [BVA min-1] distance 0 km is rejected
+      [PASS] TC-K-07 [BVA max+1] distance 2001 km is rejected
+      [PASS] TC-K-08 [EP  invalid negative] distance -10 km is rejected
+      [PASS] TC-K-09 [EP  invalid too far] distance 5000 km is rejected
+    + validDistancesAreAccepted(String, String, int)
+      [PASS] TC-K-01 [EP  valid class] distance 750 km is accepted
+      [PASS] TC-K-02 [BVA min] distance 1 km is accepted
+      [PASS] TC-K-03 [BVA min+1] distance 2 km is accepted
+      [PASS] TC-K-04 [BVA max-1] distance 1999 km is accepted
+      [PASS] TC-K-05 [BVA max] distance 2000 km is accepted
+  + FR-02 Dimensions
+    + invalidDimensionsAreRejected(String, String, int, int, int, String)
+      [PASS] TC-D-07 [BVA length below min] dimensions 0x20x10 cm are rejected
+      [PASS] TC-D-08 [BVA length above max] dimensions 151x20x10 cm are rejected
+      [PASS] TC-D-09 [BVA width below min] dimensions 30x0x10 cm are rejected
+      [PASS] TC-D-10 [BVA width above max] dimensions 30x151x10 cm are rejected
+      [PASS] TC-D-11 [BVA height below min] dimensions 30x20x0 cm are rejected
+      [PASS] TC-D-12 [BVA height above max] dimensions 30x20x151 cm are rejected
+      [PASS] TC-D-13 [EP  negative side] dimensions -5x20x10 cm are rejected
+      [PASS] TC-D-14 [BVA sum max+1 (301)] dimensions 150x100x51 cm are rejected
+    + validDimensionsAreAccepted(String, String, int, int, int)
+      [PASS] TC-D-01 [EP  valid class] dimensions 40x30x20 cm are accepted
+      [PASS] TC-D-02 [BVA side min] dimensions 1x1x1 cm are accepted
+      [PASS] TC-D-03 [BVA side min+1] dimensions 2x2x2 cm are accepted
+      [PASS] TC-D-04 [BVA side max-1] dimensions 149x10x10 cm are accepted
+      [PASS] TC-D-05 [BVA side max] dimensions 150x100x50 cm are accepted
+      [PASS] TC-D-06 [BVA sum max-1 (299)] dimensions 150x100x49 cm are accepted
+  + FR-01 Weight
+    + invalidWeightsAreRejected(String, String, double)
+      [PASS] TC-W-06 [BVA just below min] weight 0.09 kg is rejected
+      [PASS] TC-W-07 [BVA just above max] weight 30.01 kg is rejected
+      [PASS] TC-W-08 [EP  invalid: zero] weight 0.0 kg is rejected
+      [PASS] TC-W-09 [EP  invalid: negative] weight -5.0 kg is rejected
+      [PASS] TC-W-10 [EP  invalid: too heavy] weight 45.0 kg is rejected
+    + validWeightsAreAccepted(String, String, double)
+      [PASS] TC-W-01 [EP  valid class] weight 15.0 kg is accepted
+      [PASS] TC-W-02 [BVA min] weight 0.1 kg is accepted
+      [PASS] TC-W-03 [BVA just above min] weight 0.11 kg is accepted
+      [PASS] TC-W-04 [BVA just below max] weight 29.99 kg is accepted
+      [PASS] TC-W-05 [BVA max] weight 30.0 kg is accepted
+    + nonFiniteWeightsAreRejected(double)
+      [PASS] TC-W-11.1 [NEG] non-finite weight NaN is rejected
+      [PASS] TC-W-11.2 [NEG] non-finite weight Infinity is rejected
+      [PASS] TC-W-11.3 [NEG] non-finite weight -Infinity is rejected
++ Loyalty discount - decision table (FR-12)
+  + discountRateFollowsDecisionTable(String, String, CustomerType, String, String)
+    [PASS] TC-R-01 [DT R1] REGULAR, subtotal 100.00 TL -> rate 0.00
+    [PASS] TC-R-02 [DT R2] REGULAR, subtotal 800.00 TL -> rate 0.00
+    [PASS] TC-R-03 [DT R3] SILVER, subtotal 100.00 TL -> rate 0.05
+    [PASS] TC-R-04 [DT R4] SILVER, subtotal 800.00 TL -> rate 0.08
+    [PASS] TC-R-05 [DT R5] GOLD, subtotal 100.00 TL -> rate 0.10
+    [PASS] TC-R-06 [DT R6] GOLD, subtotal 800.00 TL -> rate 0.15
+    [PASS] TC-R-07 [DT R5 BVA] GOLD, subtotal 499.99 TL -> rate 0.10
+    [PASS] TC-R-08 [DT R6 BVA] GOLD, subtotal 500.00 TL -> rate 0.15
+    [PASS] TC-R-09 [DT R6 BVA] GOLD, subtotal 500.01 TL -> rate 0.15
+    [PASS] TC-R-10 [DT R3 BVA] SILVER, subtotal 499.99 TL -> rate 0.05
+    [PASS] TC-R-11 [DT R4 BVA] SILVER, subtotal 500.00 TL -> rate 0.08
++ Zone - distance zones (FR-08) and delivery time (FR-15)
+  + deliveryDaysFollowTable(String, Zone, ServiceType, int)
+    [PASS] TC-T-01 [DT] LOCAL + STANDARD -> 1 day(s)
+    [PASS] TC-T-02 [DT] REGIONAL + STANDARD -> 2 day(s)
+    [PASS] TC-T-03 [DT] NATIONAL + STANDARD -> 3 day(s)
+    [PASS] TC-T-04 [DT] LOCAL + EXPRESS -> 1 day(s)
+    [PASS] TC-T-05 [DT] REGIONAL + EXPRESS -> 1 day(s)
+    [PASS] TC-T-06 [DT] NATIONAL + EXPRESS -> 2 day(s)
+    [PASS] TC-T-07 [DT] LOCAL + SAME_DAY -> 0 day(s)
+  + distanceIsMappedToZone(String, int, Zone)
+    [PASS] TC-Z-01 [BVA] 1 km -> LOCAL
+    [PASS] TC-Z-02 [BVA] 25 km -> LOCAL
+    [PASS] TC-Z-03 [BVA] 49 km -> LOCAL
+    [PASS] TC-Z-04 [BVA] 50 km -> LOCAL
+    [PASS] TC-Z-05 [BVA] 51 km -> REGIONAL
+    [PASS] TC-Z-06 [BVA] 52 km -> REGIONAL
+    [PASS] TC-Z-07 [BVA] 299 km -> REGIONAL
+    [PASS] TC-Z-08 [BVA] 300 km -> REGIONAL
+    [PASS] TC-Z-09 [BVA] 301 km -> NATIONAL
+    [PASS] TC-Z-10 [BVA] 2000 km -> NATIONAL
+  + outOfRangeDistanceHasNoZone(int)
+    [PASS] TC-Z-11.1 [NEG] 0 km has no zone
+    [PASS] TC-Z-11.2 [NEG] -1 km has no zone
+    [PASS] TC-Z-11.3 [NEG] 2001 km has no zone
++ Regression suite - defects D1..D8 from v1.0.0
+  [PASS] REG-D4 billable weight 2.1 kg is rounded UP to 2.5 kg (was rounded to 2.0 kg)
+  [PASS] REG-D2 minimum weight 0.1 kg is accepted (was rejected)
+  [PASS] REG-D5 SAME_DAY uses billable weight: 2 kg box of 60x40x30 cm (24 kg) is rejected
+  [PASS] REG-D8 insured parcel with declared value 0 is rejected (was accepted)
+  [PASS] REG-D7 discount is not applied to the insurance fee (total 543.93 TL, was 531.93 TL)
+  [PASS] REG-D1 50 km belongs to the LOCAL zone (was REGIONAL)
+  [PASS] REG-D6 subtotal of exactly 500.00 TL gets the high-volume rate (GOLD 15%, was 10%)
+  [PASS] REG-D3 NaN weight is rejected by the validator (was accepted)
++ SAME_DAY eligibility - decision table (FR-10)
+  + otherRulesAreRejected(String, String, int, double, int, int, int, boolean)
+    [PASS] TC-S-02 [DT R2] 10 km, 2.0 kg, 20x20x10 cm, fragile=true -> rejected
+    [PASS] TC-S-03 [DT R3] 10 km, 2.0 kg, 60x40x30 cm, fragile=false -> rejected
+    [PASS] TC-S-04 [DT R3b] 10 km, 12.0 kg, 20x20x10 cm, fragile=false -> rejected
+    [PASS] TC-S-05 [DT R4] 10 km, 12.0 kg, 20x20x10 cm, fragile=true -> rejected
+    [PASS] TC-S-06 [DT R5] 120 km, 2.0 kg, 20x20x10 cm, fragile=false -> rejected
+    [PASS] TC-S-07 [DT R6] 120 km, 2.0 kg, 20x20x10 cm, fragile=true -> rejected
+    [PASS] TC-S-08 [DT R7] 120 km, 12.0 kg, 20x20x10 cm, fragile=false -> rejected
+    [PASS] TC-S-09 [DT R8] 120 km, 12.0 kg, 20x20x10 cm, fragile=true -> rejected
+  [PASS] TC-S-01 [DT R1] LOCAL, light, not fragile -> accepted, 0 delivery days
+  + sameDayBoundaries(String, String, int, double, boolean)
+    [PASS] TC-S-10 [BVA] distance at LOCAL edge: 50 km, 2.0 kg -> accepted=true
+    [PASS] TC-S-11 [BVA] distance just outside LOCAL: 51 km, 2.0 kg -> accepted=false
+    [PASS] TC-S-12 [BVA] billable weight at limit: 10 km, 10.0 kg -> accepted=true
+    [PASS] TC-S-13 [BVA] billable weight just over limit: 10 km, 10.1 kg -> accepted=false
+  [PASS] TC-S-14 [EP] the SAME_DAY restrictions do not apply to EXPRESS (national, heavy, fragile)
++ Billable weight (FR-06), base tariff (FR-07) and oversize limit (FR-07a)
+  + FR-07a Oversize limit (billable weight <= 50 kg)
+    + aboveLimitIsRejected(String, int, int, int, String)
+      [PASS] TC-O-03 [BVA/NEG] 101x50x30 cm (billable 50.5 kg) is rejected as oversized
+      [PASS] TC-O-04 [BVA/NEG] 100x100x100 cm (billable 333.5 kg) is rejected as oversized
+    + atOrBelowLimitIsAccepted(String, int, int, int, String)
+      [PASS] TC-O-01 [BVA] 100x50x30 cm (billable 50.0 kg) is accepted
+      [PASS] TC-O-02 [BVA] 99x50x30 cm (billable 49.5 kg) is accepted
+  + FR-07 Base tariff brackets
+    + baseCostFollowsBrackets(String, String, String, String)
+      [PASS] TC-P-01 [EP  bracket 1] billable 0.5 kg -> 40.00 TL
+      [PASS] TC-P-02 [BVA bracket 1 upper] billable 1.0 kg -> 40.00 TL
+      [PASS] TC-P-03 [BVA bracket 2 lower] billable 1.5 kg -> 44.00 TL
+      [PASS] TC-P-04 [BVA bracket 2 upper-1] billable 4.5 kg -> 68.00 TL
+      [PASS] TC-P-05 [BVA bracket 2 upper] billable 5.0 kg -> 72.00 TL
+      [PASS] TC-P-06 [BVA bracket 3 lower] billable 5.5 kg -> 75.00 TL
+      [PASS] TC-P-07 [BVA bracket 3 upper-1] billable 14.5 kg -> 129.00 TL
+      [PASS] TC-P-08 [BVA bracket 3 upper] billable 15.0 kg -> 132.00 TL
+      [PASS] TC-P-09 [BVA bracket 4 lower] billable 15.5 kg -> 134.50 TL
+      [PASS] TC-P-10 [BVA bracket 4 max] billable 50.0 kg -> 307.00 TL
+  + FR-06 Billable weight = max(actual, volumetric) rounded up to 0.5 kg
+    + billableWeightIsComputed(String, String, double, int, int, int, String)
+      [PASS] TC-B-01 [EP  actual weight dominates] 2.0 kg, 10x10x10 cm -> 2.0 kg
+      [PASS] TC-B-02 [EP  volumetric weight dominates] 1.0 kg, 60x40x30 cm -> 24.0 kg
+      [PASS] TC-B-03 [BVA exact half step] 2.5 kg, 10x10x10 cm -> 2.5 kg
+      [PASS] TC-B-04 [BVA just above whole kg] 2.1 kg, 10x10x10 cm -> 2.5 kg
+      [PASS] TC-B-05 [BVA just above half step] 2.51 kg, 10x10x10 cm -> 3.0 kg
+      [PASS] TC-B-06 [BVA minimum weight] 0.1 kg, 10x10x10 cm -> 0.5 kg
+      [PASS] TC-B-07 [BVA maximum weight] 30.0 kg, 10x10x10 cm -> 30.0 kg
+      [PASS] TC-B-08 [BVA volumetric exact (10.5)] 1.0 kg, 50x30x21 cm -> 10.5 kg
+      [PASS] TC-B-09 [BVA volumetric between steps] 1.0 kg, 41x30x25 cm -> 10.5 kg
+      [PASS] TC-B-10 [BVA actual = volumetric] 2.0 kg, 30x20x10 cm -> 2.0 kg
++ ShippingCostCalculator - full price calculation
+  + Invariants and negative tests
+    + totalIsConsistent(ServiceType, CustomerType, int, boolean)
+      [PASS] TC-X-01.1 [EP] total = subtotal - discount + insurance (STANDARD, REGULAR, 30 km)
+      [PASS] TC-X-01.2 [EP] total = subtotal - discount + insurance (EXPRESS, SILVER, 200 km)
+      [PASS] TC-X-01.3 [EP] total = subtotal - discount + insurance (EXPRESS, GOLD, 1500 km)
+      [PASS] TC-X-01.4 [EP] total = subtotal - discount + insurance (STANDARD, GOLD, 2000 km)
+    [PASS] TC-X-04 [NEG] a calculator built with a custom validator still validates
+    [PASS] TC-X-02 [NEG] calculate(null) is rejected with InvalidShipmentException
+    [PASS] TC-X-03 [NEG] invalid input never produces a price (validation runs first)
+    [PASS] TC-X-05 [EP] the price breakdown is printable and shows the total
+  + FR-13 Insurance fee
+    + insuranceFee(String, String, String, String)
+      [PASS] TC-I-01 [EP  minimum fee applies] declared 100 TL -> fee 15.00 TL
+      [PASS] TC-I-02 [BVA just below 1500] declared 1499.99 TL -> fee 15.00 TL
+      [PASS] TC-I-03 [BVA exactly 1500 (1%=15)] declared 1500 TL -> fee 15.00 TL
+      [PASS] TC-I-04 [BVA just above 1500] declared 1500.50 TL -> fee 15.01 TL
+      [PASS] TC-I-05 [EP  percentage applies] declared 2000 TL -> fee 20.00 TL
+      [PASS] TC-I-06 [BVA max declared value] declared 50000 TL -> fee 500.00 TL
+    [PASS] TC-I-07 [EP] no insurance fee when the parcel is not insured, even with a declared value
+  + End-to-end scenarios
+    [PASS] TC-E-03 [EP] fragile surcharge of 25.00 TL is added: 48 + 25 = 73.00 TL
+    [PASS] TC-E-05 [EP] minimum insurance fee 15.00 TL applies for 1000 TL value: 63.00 TL
+    [PASS] TC-E-04 [EP] SILVER below threshold gets 5%: 48.00 - 2.40 = 45.60 TL
+    [PASS] TC-E-08 [EP] valid same-day parcel: billable 1.5 kg, 10 km -> 44 x 2.0 = 88.00 TL
+    [PASS] TC-E-02 [EP] regional express: 3 kg, 120 km -> 56 x 1.3 x 1.5 = 109.20 TL, 1 day
+    [PASS] TC-E-07 [EP] national standard: 5 kg, 301 km -> 72 x 1.6 = 115.20 TL, 3 days
+    [PASS] TC-E-06 [DT] GOLD, high volume, fragile, insured, volumetric, national express -> 543.93 TL
+    [PASS] TC-E-09 [BVA] half-up rounding: 134.5 x 1.3 x 1.5 = 262.275 -> 262.28; SILVER 5% -> 249.17 TL
+    [PASS] TC-E-01 [EP] simple local standard parcel: 2 kg, 30 km -> 48.00 TL
+
+
+Test run finished after 651 ms
+[        40 containers found      ]
+[         0 containers skipped    ]
+[        40 containers started    ]
+[         0 containers aborted    ]
+[        40 containers successful ]
+[         0 containers failed     ]
+[       151 tests found           ]
+[         0 tests skipped         ]
+[       151 tests started         ]
+[         0 tests aborted         ]
+[       151 tests successful      ]
+[         0 tests failed          ]
+

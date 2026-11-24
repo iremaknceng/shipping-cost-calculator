@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: com.svv.shipping.service.DefectRegressionTest
+-------------------------------------------------------------------------------
+Tests run: 8, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.023 s -- in com.svv.shipping.service.DefectRegressionTest
+com.svv.shipping.service.DefectRegressionTest.d4BillableWeightRoundedUp -- Time elapsed: 0.003 s
+com.svv.shipping.service.DefectRegressionTest.d2MinimumWeightAccepted -- Time elapsed: 0.002 s
+com.svv.shipping.service.DefectRegressionTest.d5SameDayUsesBillableWeight -- Time elapsed: 0.004 s
+com.svv.shipping.service.DefectRegressionTest.d8InsuredZeroValueRejected -- Time elapsed: 0.002 s
+com.svv.shipping.service.DefectRegressionTest.d7DiscountExcludesInsurance -- Time elapsed: 0.001 s
+com.svv.shipping.service.DefectRegressionTest.d1LocalZoneUpperBoundary -- Time elapsed: 0.001 s
+com.svv.shipping.service.DefectRegressionTest.d6ThresholdInclusive -- Time elapsed: 0 s
+com.svv.shipping.service.DefectRegressionTest.d3NanWeightRejected -- Time elapsed: 0.006 s

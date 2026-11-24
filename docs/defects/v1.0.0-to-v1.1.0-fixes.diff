@@ -1,0 +1,87 @@
+diff -ru -x App.java v1.0.0/java/com/svv/shipping/model/Zone.java v1.1.0/java/com/svv/shipping/model/Zone.java
+--- v1.0.0/java/com/svv/shipping/model/Zone.java	2026-11-20 04:04:43.978825777 +0300
++++ v1.1.0/java/com/svv/shipping/model/Zone.java	2026-11-20 04:04:43.980656279 +0300
+@@ -30,16 +30,12 @@
+      * @throws IllegalArgumentException if the distance is outside 1..2000 km
+      */
+     public static Zone fromDistance(int distanceKm) {
+-        if (distanceKm < 1 || distanceKm > 2000) {
+-            throw new IllegalArgumentException("Distance must be between 1 and 2000 km: " + distanceKm);
++        for (Zone zone : values()) {
++            if (distanceKm >= zone.minKm && distanceKm <= zone.maxKm) {
++                return zone;
++            }
+         }
+-        if (distanceKm < 50) {
+-            return LOCAL;
+-        }
+-        if (distanceKm <= 300) {
+-            return REGIONAL;
+-        }
+-        return NATIONAL;
++        throw new IllegalArgumentException("Distance must be between 1 and 2000 km: " + distanceKm);
+     }
+ 
+     public BigDecimal multiplier() {
+diff -ru -x App.java v1.0.0/java/com/svv/shipping/service/ShippingCostCalculator.java v1.1.0/java/com/svv/shipping/service/ShippingCostCalculator.java
+--- v1.0.0/java/com/svv/shipping/service/ShippingCostCalculator.java	2026-11-20 04:04:43.979047758 +0300
++++ v1.1.0/java/com/svv/shipping/service/ShippingCostCalculator.java	2026-11-20 04:04:43.980869066 +0300
+@@ -57,8 +57,8 @@
+         BigDecimal transport = money(base.multiply(zone.multiplier()).multiply(shipment.service().multiplier()));
+         BigDecimal fragile = shipment.fragile() ? FRAGILE_SURCHARGE : money(BigDecimal.ZERO);
+         BigDecimal subtotal = transport.add(fragile);
++        BigDecimal discount = money(subtotal.multiply(discountRate(shipment.customer(), subtotal)));
+         BigDecimal insurance = shipment.insured() ? insuranceFee(shipment.declaredValue()) : money(BigDecimal.ZERO);
+-        BigDecimal discount = money(subtotal.add(insurance).multiply(discountRate(shipment.customer(), subtotal)));
+         BigDecimal total = subtotal.subtract(discount).add(insurance);
+ 
+         return new PriceBreakdown(billable, zone, base, transport, fragile, subtotal, discount, insurance,
+@@ -74,7 +74,7 @@
+         BigDecimal volumetric = volume.divide(VOLUMETRIC_DIVISOR, 4, RoundingMode.HALF_UP);
+         BigDecimal heavier = actual.max(volumetric);
+         // number of half-kilogram steps, rounded up
+-        BigDecimal steps = heavier.divide(HALF, 0, RoundingMode.HALF_UP);
++        BigDecimal steps = heavier.divide(HALF, 0, RoundingMode.CEILING);
+         return steps.multiply(HALF).setScale(1, RoundingMode.UNNECESSARY);
+     }
+ 
+@@ -112,7 +112,7 @@
+         if (zone != Zone.LOCAL) {
+             throw new UnsupportedServiceException("SAME_DAY is only available in the LOCAL zone (<= 50 km)");
+         }
+-        if (BigDecimal.valueOf(s.weightKg()).compareTo(SAME_DAY_MAX_WEIGHT_KG) > 0) {
++        if (billable.compareTo(SAME_DAY_MAX_WEIGHT_KG) > 0) {
+             throw new UnsupportedServiceException("SAME_DAY is limited to a billable weight of 10 kg: " + billable);
+         }
+         if (s.fragile()) {
+@@ -122,7 +122,7 @@
+ 
+     /** FR-12: loyalty discount; the higher rate applies when the subtotal is at least 500 TL. */
+     BigDecimal discountRate(CustomerType customer, BigDecimal subtotal) {
+-        return subtotal.compareTo(HIGH_VOLUME_THRESHOLD) > 0
++        return subtotal.compareTo(HIGH_VOLUME_THRESHOLD) >= 0
+                 ? customer.highVolumeRate()
+                 : customer.normalRate();
+     }
+diff -ru -x App.java v1.0.0/java/com/svv/shipping/validation/ShipmentValidator.java v1.1.0/java/com/svv/shipping/validation/ShipmentValidator.java
+--- v1.0.0/java/com/svv/shipping/validation/ShipmentValidator.java	2026-11-20 04:04:43.978960300 +0300
++++ v1.1.0/java/com/svv/shipping/validation/ShipmentValidator.java	2026-11-20 04:04:43.980787415 +0300
+@@ -37,7 +37,8 @@
+ 
+     /** FR-01: 0.1 kg &lt;= weight &lt;= 30.0 kg. NaN and infinity are rejected. */
+     void validateWeight(double weightKg) {
+-        if (weightKg <= MIN_WEIGHT_KG || weightKg > MAX_WEIGHT_KG) {
++        // Written as a negated range check so that NaN (for which every comparison is false) is rejected.
++        if (!(weightKg >= MIN_WEIGHT_KG && weightKg <= MAX_WEIGHT_KG)) {
+             throw new InvalidShipmentException(
+                     "Weight must be between " + MIN_WEIGHT_KG + " and " + MAX_WEIGHT_KG + " kg: " + weightKg);
+         }
+@@ -81,5 +82,8 @@
+         if (value.compareTo(MAX_DECLARED_VALUE) > 0) {
+             throw new InvalidShipmentException("Declared value must not exceed " + MAX_DECLARED_VALUE + " TL: " + value);
+         }
++        if (insured && value.signum() == 0) {
++            throw new InvalidShipmentException("Insured shipments must have a declared value greater than 0");
++        }
+     }
+ }

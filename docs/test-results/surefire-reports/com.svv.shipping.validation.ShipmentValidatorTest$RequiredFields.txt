@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: com.svv.shipping.validation.ShipmentValidatorTest$RequiredFields
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 0.011 s -- in com.svv.shipping.validation.ShipmentValidatorTest$RequiredFields
+com.svv.shipping.validation.ShipmentValidatorTest$RequiredFields.nullService -- Time elapsed: 0 s
+com.svv.shipping.validation.ShipmentValidatorTest$RequiredFields.nullShipment -- Time elapsed: 0.001 s
+com.svv.shipping.validation.ShipmentValidatorTest$RequiredFields.nullCustomer -- Time elapsed: 0.001 s
+com.svv.shipping.validation.ShipmentValidatorTest$RequiredFields.allEnumValuesAccepted -- Time elapsed: 0.004 s

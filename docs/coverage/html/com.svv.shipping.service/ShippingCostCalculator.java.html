@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ShippingCostCalculator.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Shipping Cost Calculator v1.1.0</a> &gt; <a href="index.source.html" class="el_package">com.svv.shipping.service</a> &gt; <span class="el_source">ShippingCostCalculator.java</span></div><h1>ShippingCostCalculator.java</h1><pre class="source lang-java linenums">package com.svv.shipping.service;
+
+import com.svv.shipping.model.CustomerType;
+import com.svv.shipping.model.PriceBreakdown;
+import com.svv.shipping.model.ServiceType;
+import com.svv.shipping.model.Shipment;
+import com.svv.shipping.model.Zone;
+import com.svv.shipping.validation.InvalidShipmentException;
+import com.svv.shipping.validation.ShipmentValidator;
+
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
+/**
+ * Calculates the price of a shipment according to requirements FR-06 .. FR-15.
+ */
+public class ShippingCostCalculator {
+
+<span class="fc" id="L19">    static final BigDecimal VOLUMETRIC_DIVISOR = new BigDecimal(&quot;3000&quot;);</span>
+<span class="fc" id="L20">    static final BigDecimal MAX_BILLABLE_WEIGHT_KG = new BigDecimal(&quot;50.0&quot;);</span>
+<span class="fc" id="L21">    static final BigDecimal SAME_DAY_MAX_WEIGHT_KG = new BigDecimal(&quot;10.0&quot;);</span>
+<span class="fc" id="L22">    static final BigDecimal FRAGILE_SURCHARGE = new BigDecimal(&quot;25.00&quot;);</span>
+<span class="fc" id="L23">    static final BigDecimal HIGH_VOLUME_THRESHOLD = new BigDecimal(&quot;500.00&quot;);</span>
+<span class="fc" id="L24">    static final BigDecimal INSURANCE_RATE = new BigDecimal(&quot;0.01&quot;);</span>
+<span class="fc" id="L25">    static final BigDecimal MIN_INSURANCE_FEE = new BigDecimal(&quot;15.00&quot;);</span>
+
+<span class="fc" id="L27">    private static final BigDecimal HALF = new BigDecimal(&quot;0.5&quot;);</span>
+
+    private final ShipmentValidator validator;
+
+    public ShippingCostCalculator() {
+<span class="fc" id="L32">        this(new ShipmentValidator());</span>
+<span class="fc" id="L33">    }</span>
+
+<span class="fc" id="L35">    public ShippingCostCalculator(ShipmentValidator validator) {</span>
+<span class="fc" id="L36">        this.validator = validator;</span>
+<span class="fc" id="L37">    }</span>
+
+    /**
+     * Validates the shipment and returns its full price breakdown.
+     *
+     * @throws InvalidShipmentException     if an input rule is violated
+     * @throws UnsupportedServiceException if SAME_DAY is requested for an ineligible parcel
+     */
+    public PriceBreakdown calculate(Shipment shipment) {
+<span class="fc" id="L46">        validator.validate(shipment);</span>
+
+<span class="fc" id="L48">        BigDecimal billable = billableWeight(shipment);</span>
+<span class="fc bfc" id="L49" title="All 2 branches covered.">        if (billable.compareTo(MAX_BILLABLE_WEIGHT_KG) &gt; 0) {</span>
+<span class="fc" id="L50">            throw new InvalidShipmentException(</span>
+                    &quot;Billable weight exceeds &quot; + MAX_BILLABLE_WEIGHT_KG + &quot; kg (oversized parcel): &quot; + billable);
+        }
+<span class="fc" id="L53">        Zone zone = Zone.fromDistance(shipment.distanceKm());</span>
+<span class="fc" id="L54">        checkServiceEligibility(shipment, zone, billable);</span>
+
+<span class="fc" id="L56">        BigDecimal base = baseCost(billable);</span>
+<span class="fc" id="L57">        BigDecimal transport = money(base.multiply(zone.multiplier()).multiply(shipment.service().multiplier()));</span>
+<span class="fc bfc" id="L58" title="All 2 branches covered.">        BigDecimal fragile = shipment.fragile() ? FRAGILE_SURCHARGE : money(BigDecimal.ZERO);</span>
+<span class="fc" id="L59">        BigDecimal subtotal = transport.add(fragile);</span>
+<span class="fc" id="L60">        BigDecimal discount = money(subtotal.multiply(discountRate(shipment.customer(), subtotal)));</span>
+<span class="fc bfc" id="L61" title="All 2 branches covered.">        BigDecimal insurance = shipment.insured() ? insuranceFee(shipment.declaredValue()) : money(BigDecimal.ZERO);</span>
+<span class="fc" id="L62">        BigDecimal total = subtotal.subtract(discount).add(insurance);</span>
+
+<span class="fc" id="L64">        return new PriceBreakdown(billable, zone, base, transport, fragile, subtotal, discount, insurance,</span>
+<span class="fc" id="L65">                total, zone.deliveryDays(shipment.service()));</span>
+    }
+
+    /**
+     * FR-06: billable weight = max(actual, L*W*H / 3000), rounded UP to the next 0.5 kg.
+     */
+    BigDecimal billableWeight(Shipment s) {
+<span class="fc" id="L72">        BigDecimal actual = BigDecimal.valueOf(s.weightKg());</span>
+<span class="fc" id="L73">        BigDecimal volume = BigDecimal.valueOf((long) s.lengthCm() * s.widthCm() * s.heightCm());</span>
+<span class="fc" id="L74">        BigDecimal volumetric = volume.divide(VOLUMETRIC_DIVISOR, 4, RoundingMode.HALF_UP);</span>
+<span class="fc" id="L75">        BigDecimal heavier = actual.max(volumetric);</span>
+        // number of half-kilogram steps, rounded up
+<span class="fc" id="L77">        BigDecimal steps = heavier.divide(HALF, 0, RoundingMode.CEILING);</span>
+<span class="fc" id="L78">        return steps.multiply(HALF).setScale(1, RoundingMode.UNNECESSARY);</span>
+    }
+
+    /**
+     * FR-07: piecewise tariff on the billable weight.
+     * &lt;pre&gt;
+     *   w &amp;lt;= 1          : 40
+     *   1  &amp;lt; w &amp;lt;= 5     : 40  + (w - 1)  * 8
+     *   5  &amp;lt; w &amp;lt;= 15    : 72  + (w - 5)  * 6
+     *   w &amp;gt; 15          : 132 + (w - 15) * 5
+     * &lt;/pre&gt;
+     */
+    BigDecimal baseCost(BigDecimal w) {
+        BigDecimal cost;
+<span class="fc bfc" id="L92" title="All 2 branches covered.">        if (w.compareTo(BigDecimal.ONE) &lt;= 0) {</span>
+<span class="fc" id="L93">            cost = new BigDecimal(&quot;40&quot;);</span>
+<span class="fc bfc" id="L94" title="All 2 branches covered.">        } else if (w.compareTo(new BigDecimal(&quot;5&quot;)) &lt;= 0) {</span>
+<span class="fc" id="L95">            cost = new BigDecimal(&quot;40&quot;).add(w.subtract(BigDecimal.ONE).multiply(new BigDecimal(&quot;8&quot;)));</span>
+<span class="fc bfc" id="L96" title="All 2 branches covered.">        } else if (w.compareTo(new BigDecimal(&quot;15&quot;)) &lt;= 0) {</span>
+<span class="fc" id="L97">            cost = new BigDecimal(&quot;72&quot;).add(w.subtract(new BigDecimal(&quot;5&quot;)).multiply(new BigDecimal(&quot;6&quot;)));</span>
+        } else {
+<span class="fc" id="L99">            cost = new BigDecimal(&quot;132&quot;).add(w.subtract(new BigDecimal(&quot;15&quot;)).multiply(new BigDecimal(&quot;5&quot;)));</span>
+        }
+<span class="fc" id="L101">        return money(cost);</span>
+    }
+
+    /**
+     * FR-10: SAME_DAY is allowed only when the zone is LOCAL, the billable weight
+     * is at most 10 kg and the parcel is not fragile.
+     */
+    void checkServiceEligibility(Shipment s, Zone zone, BigDecimal billable) {
+<span class="fc bfc" id="L109" title="All 2 branches covered.">        if (s.service() != ServiceType.SAME_DAY) {</span>
+<span class="fc" id="L110">            return;</span>
+        }
+<span class="fc bfc" id="L112" title="All 2 branches covered.">        if (zone != Zone.LOCAL) {</span>
+<span class="fc" id="L113">            throw new UnsupportedServiceException(&quot;SAME_DAY is only available in the LOCAL zone (&lt;= 50 km)&quot;);</span>
+        }
+<span class="fc bfc" id="L115" title="All 2 branches covered.">        if (billable.compareTo(SAME_DAY_MAX_WEIGHT_KG) &gt; 0) {</span>
+<span class="fc" id="L116">            throw new UnsupportedServiceException(&quot;SAME_DAY is limited to a billable weight of 10 kg: &quot; + billable);</span>
+        }
+<span class="fc bfc" id="L118" title="All 2 branches covered.">        if (s.fragile()) {</span>
+<span class="fc" id="L119">            throw new UnsupportedServiceException(&quot;SAME_DAY is not available for fragile parcels&quot;);</span>
+        }
+<span class="fc" id="L121">    }</span>
+
+    /** FR-12: loyalty discount; the higher rate applies when the subtotal is at least 500 TL. */
+    BigDecimal discountRate(CustomerType customer, BigDecimal subtotal) {
+<span class="fc bfc" id="L125" title="All 2 branches covered.">        return subtotal.compareTo(HIGH_VOLUME_THRESHOLD) &gt;= 0</span>
+<span class="fc" id="L126">                ? customer.highVolumeRate()</span>
+<span class="fc" id="L127">                : customer.normalRate();</span>
+    }
+
+    /** FR-13: 1% of the declared value, at least 15.00 TL. */
+    BigDecimal insuranceFee(BigDecimal declaredValue) {
+<span class="fc" id="L132">        return money(declaredValue.multiply(INSURANCE_RATE).max(MIN_INSURANCE_FEE));</span>
+    }
+
+    private static BigDecimal money(BigDecimal value) {
+<span class="fc" id="L136">        return value.setScale(2, RoundingMode.HALF_UP);</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>
